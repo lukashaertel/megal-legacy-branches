@@ -5,7 +5,8 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>megamodel.ecore</foreignModel>
-  <genPackages prefix="Megamodel" disposableProviderFactory="true" ecorePackage="megamodel.ecore#/">
+  <genPackages prefix="Megamodel" basePackage="org.softlang.megal" disposableProviderFactory="true"
+      ecorePackage="megamodel.ecore#/">
     <genClasses ecoreClass="megamodel.ecore#//Megamodel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference megamodel.ecore#//Megamodel/decls"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//Megamodel/imports"/>

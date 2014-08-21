@@ -6,11 +6,11 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: megamodel,
- megamodel.impl,
- megamodel.util
+Export-Package: org.softlang.megal.megamodel,
+ org.softlang.megal.megamodel.impl,
+ org.softlang.megal.megamodel.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-ActivationPolicy: lazy
 Import-Package: org.apache.log4j
+Bundle-ActivationPolicy: lazy

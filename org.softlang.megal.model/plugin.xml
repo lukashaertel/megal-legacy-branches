@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><?eclipse version="3.0"?><!--
 --><plugin>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated megamodel -->
-    <package class="megamodel.MegamodelPackage" genModel="model/megamodel.genmodel" uri="http://softlang.org/megamodel"/>
-  </extension>
-</plugin>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated megamodel -->
+      <package
+            uri="http://softlang.org/megamodel"
+            class="org.softlang.megal.megamodel.MegamodelPackage"
+            genModel="model/megamodel.genmodel"/>
+   </extension>
+
+</plugin>
