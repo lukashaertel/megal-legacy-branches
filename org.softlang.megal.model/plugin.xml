@@ -7,4 +7,7 @@
   <extension id="org.softlang.megal.queries.Derivers" point="org.eclipse.incquery.runtime.queryspecification">
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.softlang.megal.queries.Derivers" id="org.softlang.megal.queries.Derivers"/>
   </extension>
+  <extension id="extension.derived.org.softlang.megal.queries.eTypeDecls" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="DeclGroup" feature-name="eTypeDecls" package-nsUri="http://softlang.org/megamodel"/>
+  </extension>
 </plugin>

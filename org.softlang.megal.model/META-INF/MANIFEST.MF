@@ -8,7 +8,9 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.softlang.megal.megamodel,
  org.softlang.megal.megamodel.impl,
- org.softlang.megal.megamodel.util
+ org.softlang.megal.megamodel.util,
+ org.softlang.megal.queries,
+ org.softlang.megal.queries.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.incquery.runtime

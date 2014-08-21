@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="megamodel" nsURI="http://softlang.org/megamodel" nsPrefix="gm">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="settingDelegates" value="org.eclipse.incquery.querybasedfeature"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Megamodel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="decls" upperBound="-1"
         eType="#//DeclGroup" containment="true"/>
@@ -9,7 +12,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeclGroup" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="eTypeDecls" upperBound="-1"
-        eType="#//ETypeDecl" changeable="false" volatile="true" transient="true" derived="true"/>
+        eType="#//ETypeDecl" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.softlang.megal.queries.eTypeDecls"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rTypeDecls" upperBound="-1"
         eType="#//RTypeDecl" changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eDecls" upperBound="-1"

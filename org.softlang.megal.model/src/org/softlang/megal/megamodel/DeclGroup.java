@@ -38,6 +38,7 @@ public interface DeclGroup extends EObject {
 	 * @return the value of the '<em>EType Decls</em>' reference list.
 	 * @see org.softlang.megal.megamodel.MegamodelPackage#getDeclGroup_ETypeDecls()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='org.softlang.megal.queries.eTypeDecls'"
 	 * @generated
 	 */
 	EList<ETypeDecl> getETypeDecls();

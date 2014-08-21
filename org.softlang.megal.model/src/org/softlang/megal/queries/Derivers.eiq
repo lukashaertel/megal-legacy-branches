@@ -1,1 +1,9 @@
 package org.softlang.megal.queries
+
+import "http://softlang.org/megamodel"
+
+@QueryBasedFeature
+pattern eTypeDecls(A: DeclGroup, B: ETypeDecl) = {
+	ExETypeDeclGroup(A);
+	ExETypeDeclGroup.exETypeDecls(A, B);
+}

@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.softlang.megal.megamodel.DeclGroup;
@@ -33,6 +34,16 @@ import org.softlang.megal.megamodel.RTypeDecl;
  */
 public abstract class DeclGroupImpl extends MinimalEObjectImpl.Container implements DeclGroup {
 	/**
+	 * The cached setting delegate for the '{@link #getETypeDecls() <em>EType Decls</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getETypeDecls()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ETYPE_DECLS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MegamodelPackage.Literals.DECL_GROUP__ETYPE_DECLS).getSettingDelegate();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -56,12 +67,9 @@ public abstract class DeclGroupImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<ETypeDecl> getETypeDecls() {
-		// TODO: implement this method to return the 'EType Decls' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		return (EList<ETypeDecl>)ETYPE_DECLS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -132,7 +140,7 @@ public abstract class DeclGroupImpl extends MinimalEObjectImpl.Container impleme
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MegamodelPackage.DECL_GROUP__ETYPE_DECLS:
-				return !getETypeDecls().isEmpty();
+				return ETYPE_DECLS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case MegamodelPackage.DECL_GROUP__RTYPE_DECLS:
 				return !getRTypeDecls().isEmpty();
 			case MegamodelPackage.DECL_GROUP__EDECLS:
