@@ -580,13 +580,22 @@ public interface MegamodelPackage extends EPackage {
 	int EX_ETYPE_DECL__EX_SUPERTYPE = ETYPE_DECL_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Ex Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EX_ETYPE_DECL__EX_NAME = ETYPE_DECL_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Ex EType Decl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EX_ETYPE_DECL_FEATURE_COUNT = ETYPE_DECL_FEATURE_COUNT + 1;
+	int EX_ETYPE_DECL_FEATURE_COUNT = ETYPE_DECL_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Ex EType Decl</em>' class.
@@ -1547,6 +1556,17 @@ public interface MegamodelPackage extends EPackage {
 	EReference getExETypeDecl_ExSupertype();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.softlang.megal.megamodel.ExETypeDecl#getExName <em>Ex Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ex Name</em>'.
+	 * @see org.softlang.megal.megamodel.ExETypeDecl#getExName()
+	 * @see #getExETypeDecl()
+	 * @generated
+	 */
+	EAttribute getExETypeDecl_ExName();
+
+	/**
 	 * Returns the meta object for class '{@link org.softlang.megal.megamodel.ExEType <em>Ex EType</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2115,6 +2135,14 @@ public interface MegamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EX_ETYPE_DECL__EX_SUPERTYPE = eINSTANCE.getExETypeDecl_ExSupertype();
+
+		/**
+		 * The meta object literal for the '<em><b>Ex Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EX_ETYPE_DECL__EX_NAME = eINSTANCE.getExETypeDecl_ExName();
 
 		/**
 		 * The meta object literal for the '{@link org.softlang.megal.megamodel.impl.ExETypeImpl <em>Ex EType</em>}' class.

@@ -10,4 +10,10 @@
   <extension id="extension.derived.org.softlang.megal.queries.eTypeDecls" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
     <wellbehaving-derived-feature classifier-name="DeclGroup" feature-name="eTypeDecls" package-nsUri="http://softlang.org/megamodel"/>
   </extension>
+  <extension id="extension.derived.org.softlang.megal.queries.name" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="ETypeDecl" feature-name="name" package-nsUri="http://softlang.org/megamodel"/>
+  </extension>
+  <extension id="extension.derived.org.softlang.megal.queries.supertype" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+    <wellbehaving-derived-feature classifier-name="ETypeDecl" feature-name="supertype" package-nsUri="http://softlang.org/megamodel"/>
+  </extension>
 </plugin>

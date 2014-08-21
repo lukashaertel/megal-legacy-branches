@@ -22,6 +22,7 @@ import org.softlang.megal.megamodel.MegamodelPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.softlang.megal.megamodel.impl.ExETypeDeclImpl#getExSupertype <em>Ex Supertype</em>}</li>
+ *   <li>{@link org.softlang.megal.megamodel.impl.ExETypeDeclImpl#getExName <em>Ex Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +38,25 @@ public class ExETypeDeclImpl extends ETypeDeclImpl implements ExETypeDecl {
 	 * @ordered
 	 */
 	protected ExEType exSupertype;
+
+	/**
+	 * The default value of the '{@link #getExName() <em>Ex Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EX_NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getExName() <em>Ex Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String exName = EX_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,6 +125,27 @@ public class ExETypeDeclImpl extends ETypeDeclImpl implements ExETypeDecl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getExName() {
+		return exName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExName(String newExName) {
+		String oldExName = exName;
+		exName = newExName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MegamodelPackage.EX_ETYPE_DECL__EX_NAME, oldExName, exName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -124,6 +165,8 @@ public class ExETypeDeclImpl extends ETypeDeclImpl implements ExETypeDecl {
 		switch (featureID) {
 			case MegamodelPackage.EX_ETYPE_DECL__EX_SUPERTYPE:
 				return getExSupertype();
+			case MegamodelPackage.EX_ETYPE_DECL__EX_NAME:
+				return getExName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -138,6 +181,9 @@ public class ExETypeDeclImpl extends ETypeDeclImpl implements ExETypeDecl {
 		switch (featureID) {
 			case MegamodelPackage.EX_ETYPE_DECL__EX_SUPERTYPE:
 				setExSupertype((ExEType)newValue);
+				return;
+			case MegamodelPackage.EX_ETYPE_DECL__EX_NAME:
+				setExName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -154,6 +200,9 @@ public class ExETypeDeclImpl extends ETypeDeclImpl implements ExETypeDecl {
 			case MegamodelPackage.EX_ETYPE_DECL__EX_SUPERTYPE:
 				setExSupertype((ExEType)null);
 				return;
+			case MegamodelPackage.EX_ETYPE_DECL__EX_NAME:
+				setExName(EX_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -168,8 +217,26 @@ public class ExETypeDeclImpl extends ETypeDeclImpl implements ExETypeDecl {
 		switch (featureID) {
 			case MegamodelPackage.EX_ETYPE_DECL__EX_SUPERTYPE:
 				return exSupertype != null;
+			case MegamodelPackage.EX_ETYPE_DECL__EX_NAME:
+				return EX_NAME_EDEFAULT == null ? exName != null : !EX_NAME_EDEFAULT.equals(exName);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (exName: ");
+		result.append(exName);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ExETypeDeclImpl

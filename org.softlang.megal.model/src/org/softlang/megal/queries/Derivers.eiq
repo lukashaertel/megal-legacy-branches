@@ -2,8 +2,28 @@ package org.softlang.megal.queries
 
 import "http://softlang.org/megamodel"
 
+/**
+ * <p>Derives the name feature of an entity type declaration</p>
+ * <p>For an explicit entity type declaration, map to the explicit name</p>
+ */
 @QueryBasedFeature
-pattern eTypeDecls(A: DeclGroup, B: ETypeDecl) = {
+pattern name(A : ETypeDecl, B) = {
+	ExETypeDecl(A);
+	ExETypeDecl.exName(A, B);
+}
+
+/**
+ * <p>Derives the entity type declarations feature of a declaration group</p>
+ * <p>For an explicit entity type declaration group, map to the single declaration</p>
+ */
+@QueryBasedFeature
+pattern eTypeDecls(A : DeclGroup, B : ETypeDecl) = {
 	ExETypeDeclGroup(A);
 	ExETypeDeclGroup.exETypeDecls(A, B);
+}
+
+@QueryBasedFeature
+pattern supertype(A : ETypeDecl, B : EType) = {
+	ExETypeDecl(A);
+	ExETypeDecl.exSupertype(A, B);
 }

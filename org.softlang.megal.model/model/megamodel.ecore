@@ -26,9 +26,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ETypeDecl" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="supertype" eType="#//EType"
-        changeable="false" volatile="true" transient="true" derived="true"/>
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.softlang.megal.queries.supertype"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" volatile="true" transient="true" derived="true"/>
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.softlang.megal.queries.name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RTypeDecl" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" lowerBound="1" eType="#//EType"
@@ -76,6 +84,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExETypeDecl" eSuperTypes="#//ETypeDecl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exSupertype" eType="#//ExEType"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExEType" eSuperTypes="#//EType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exDef" lowerBound="1" eType="#//ETypeDecl"/>

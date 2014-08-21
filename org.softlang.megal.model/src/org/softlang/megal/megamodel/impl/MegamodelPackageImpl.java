@@ -519,6 +519,15 @@ public class MegamodelPackageImpl extends EPackageImpl implements MegamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getExETypeDecl_ExName() {
+		return (EAttribute)exETypeDeclEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExEType() {
 		return exETypeEClass;
 	}
@@ -800,6 +809,7 @@ public class MegamodelPackageImpl extends EPackageImpl implements MegamodelPacka
 
 		exETypeDeclEClass = createEClass(EX_ETYPE_DECL);
 		createEReference(exETypeDeclEClass, EX_ETYPE_DECL__EX_SUPERTYPE);
+		createEAttribute(exETypeDeclEClass, EX_ETYPE_DECL__EX_NAME);
 
 		exETypeEClass = createEClass(EX_ETYPE);
 		createEReference(exETypeEClass, EX_ETYPE__EX_DEF);
@@ -914,6 +924,7 @@ public class MegamodelPackageImpl extends EPackageImpl implements MegamodelPacka
 
 		initEClass(exETypeDeclEClass, ExETypeDecl.class, "ExETypeDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExETypeDecl_ExSupertype(), this.getExEType(), null, "exSupertype", null, 0, 1, ExETypeDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExETypeDecl_ExName(), ecorePackage.getEString(), "exName", null, 1, 1, ExETypeDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exETypeEClass, ExEType.class, "ExEType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExEType_ExDef(), this.getETypeDecl(), null, "exDef", null, 1, 1, ExEType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
