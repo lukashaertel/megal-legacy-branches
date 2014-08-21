@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.softlang.megal.model/src" modelPluginID="org.softlang.megal.model"
+    modelName="Megamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>megamodel.ecore</foreignModel>
+  <genPackages prefix="Megamodel" disposableProviderFactory="true" ecorePackage="megamodel.ecore#/">
+    <genClasses ecoreClass="megamodel.ecore#//Megamodel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference megamodel.ecore#//Megamodel/decls"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//Megamodel/imports"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//DeclGroup">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference megamodel.ecore#//DeclGroup/eTypeDecls"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference megamodel.ecore#//DeclGroup/rTypeDecls"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference megamodel.ecore#//DeclGroup/eDecls"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference megamodel.ecore#//DeclGroup/rDecls"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//ETypeDecl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//ETypeDecl/supertype"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//ETypeDecl/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//EType/args"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//RTypeDecl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//RTypeDecl/left"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//RTypeDecl/right"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//RTypeDecl/name"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//EDecl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//EDecl/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//EDecl/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//EDecl/showname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//EDecl/isParameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//EDecl/isDependent"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//RDecl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//RDecl/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//RDecl/left"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//RDecl/right"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//EType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//EType/def"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference megamodel.ecore#//EType/args"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//EType/isMany"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//ExETypeDeclGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExETypeDeclGroup/exETypeDecls"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//ExETypeDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExETypeDecl/exSupertype"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//ExEType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExEType/exDef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExEType/exArgs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//ExEType/exIsMany"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//ExRTypeDeclGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExRTypeDeclGroup/exRTypeDecls"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//ExRTypeDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExRTypeDecl/exLeft"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExRTypeDecl/exRight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//ExRTypeDecl/exName"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//ExEDeclGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExEDeclGroup/exEDecls"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//ExEDecl">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//ExEDecl/exName"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//ExEDecl/exShowname"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//ExEDecl/exIsParameter"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute megamodel.ecore#//ExEDecl/exIsDependent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExEDecl/exType"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//ExRDecl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExRDecl/exType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExRDecl/exLeft"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExRDecl/exRight"/>
+    </genClasses>
+    <genClasses ecoreClass="megamodel.ecore#//ExRDeclGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference megamodel.ecore#//ExRDeclGroup/exRDecls"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
