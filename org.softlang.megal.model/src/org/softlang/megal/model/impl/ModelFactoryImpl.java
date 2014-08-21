@@ -58,18 +58,13 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 		switch (eClass.getClassifierID()) {
 			case ModelPackage.DECLARATION: return createDeclaration();
 			case ModelPackage.RELATION: return createRelation();
-			case ModelPackage.POINTER_ENTITY_REF: return createPointerEntityRef();
 			case ModelPackage.ENTITY: return createEntity();
 			case ModelPackage.RELATION_TYPE: return createRelationType();
-			case ModelPackage.POINTER_RELATION_TYPE_REF: return createPointerRelationTypeRef();
 			case ModelPackage.ENTITY_TYPE: return createEntityType();
-			case ModelPackage.TOP_ENTITY_TYPE_REF: return createTopEntityTypeRef();
-			case ModelPackage.POINTER_ENTITY_TYPE_REF: return createPointerEntityTypeRef();
 			case ModelPackage.FUNCTION_APPLICATION: return createFunctionApplication();
-			case ModelPackage.PRELUDE_DECLARATION_REF: return createPreludeDeclarationRef();
-			case ModelPackage.POINTER_DECLARATION_REF: return createPointerDeclarationRef();
 			case ModelPackage.MEGAMODEL: return createMegamodel();
 			case ModelPackage.BINDING: return createBinding();
+			case ModelPackage.DECLARED: return createDeclared();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -100,16 +95,6 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PointerEntityRef createPointerEntityRef() {
-		PointerEntityRefImpl pointerEntityRef = new PointerEntityRefImpl();
-		return pointerEntityRef;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Entity createEntity() {
 		EntityImpl entity = new EntityImpl();
 		return entity;
@@ -130,16 +115,6 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PointerRelationTypeRef createPointerRelationTypeRef() {
-		PointerRelationTypeRefImpl pointerRelationTypeRef = new PointerRelationTypeRefImpl();
-		return pointerRelationTypeRef;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EntityType createEntityType() {
 		EntityTypeImpl entityType = new EntityTypeImpl();
 		return entityType;
@@ -150,49 +125,9 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TopEntityTypeRef createTopEntityTypeRef() {
-		TopEntityTypeRefImpl topEntityTypeRef = new TopEntityTypeRefImpl();
-		return topEntityTypeRef;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PointerEntityTypeRef createPointerEntityTypeRef() {
-		PointerEntityTypeRefImpl pointerEntityTypeRef = new PointerEntityTypeRefImpl();
-		return pointerEntityTypeRef;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public FunctionApplication createFunctionApplication() {
 		FunctionApplicationImpl functionApplication = new FunctionApplicationImpl();
 		return functionApplication;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PreludeDeclarationRef createPreludeDeclarationRef() {
-		PreludeDeclarationRefImpl preludeDeclarationRef = new PreludeDeclarationRefImpl();
-		return preludeDeclarationRef;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PointerDeclarationRef createPointerDeclarationRef() {
-		PointerDeclarationRefImpl pointerDeclarationRef = new PointerDeclarationRefImpl();
-		return pointerDeclarationRef;
 	}
 
 	/**
@@ -213,6 +148,16 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	public Binding createBinding() {
 		BindingImpl binding = new BindingImpl();
 		return binding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Declared createDeclared() {
+		DeclaredImpl declared = new DeclaredImpl();
+		return declared;
 	}
 
 	/**

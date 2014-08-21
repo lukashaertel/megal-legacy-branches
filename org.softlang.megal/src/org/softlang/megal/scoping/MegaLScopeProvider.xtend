@@ -7,7 +7,8 @@ import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.scoping.Scopes
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider
 import org.softlang.megal.model.Declaration
-import org.softlang.megal.model.PointerDeclarationRef
+
+//import org.softlang.megal.model.PointerDeclarationRef
 import com.google.inject.Inject
 import org.eclipse.emf.mwe2.language.scoping.QualifiedNameProvider
 
@@ -23,10 +24,8 @@ class MegaLScopeProvider extends AbstractDeclarativeScopeProvider {
 	var QualifiedNameProvider qualifiedNameProvider
 
 	def <T> Iterable<T> all(Declaration d, (Declaration)=>Iterable<T> g) {
-
-		// Sadly we have to do this by hand, as IncQuery does
-		// not like lazy linking resource very much
-		g.apply(d) + d.imports.filter(PointerDeclarationRef).map[all(refered, g)].flatten
+		// LW here only, as RETE nets would blow up the LLR
+		g.apply(d) + d.imports.map[e|all(e, g)].flatten
 	}
 
 	def scope_EntityType(Declaration d, EReference r) {

@@ -65,7 +65,7 @@ public interface ModelPackage extends EPackage {
 	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getAbstractPart()
 	 * @generated
 	 */
-	int ABSTRACT_PART = 18;
+	int ABSTRACT_PART = 8;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Part</em>' class.
@@ -159,22 +159,58 @@ public interface ModelPackage extends EPackage {
 	int DECLARATION__NAME = ABSTRACT_PART_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DECLARATION__IMPORTS = ABSTRACT_PART_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DECLARATION__CONFIGURATION = ABSTRACT_PART_FEATURE_COUNT + 8;
+	int DECLARATION__CONFIGURATION = ABSTRACT_PART_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARATION__IMPORTS = ABSTRACT_PART_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Imported Entities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARATION__IMPORTED_ENTITIES = ABSTRACT_PART_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Imported Relation Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARATION__IMPORTED_RELATION_TYPES = ABSTRACT_PART_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Imported Relations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARATION__IMPORTED_RELATIONS = ABSTRACT_PART_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Imported Entity Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARATION__IMPORTED_ENTITY_TYPES = ABSTRACT_PART_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Declaration</em>' class.
@@ -183,7 +219,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DECLARATION_FEATURE_COUNT = ABSTRACT_PART_FEATURE_COUNT + 9;
+	int DECLARATION_FEATURE_COUNT = ABSTRACT_PART_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of operations of the '<em>Declaration</em>' class.
@@ -205,7 +241,7 @@ public interface ModelPackage extends EPackage {
 	int RELATION = 1;
 
 	/**
-	 * The feature id for the '<em><b>From</b></em>' containment reference.
+	 * The feature id for the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -214,7 +250,7 @@ public interface ModelPackage extends EPackage {
 	int RELATION__FROM = 0;
 
 	/**
-	 * The feature id for the '<em><b>To</b></em>' containment reference.
+	 * The feature id for the '<em><b>To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -223,7 +259,7 @@ public interface ModelPackage extends EPackage {
 	int RELATION__TO = 1;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -250,71 +286,6 @@ public interface ModelPackage extends EPackage {
 	int RELATION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.softlang.megal.model.impl.AbstractEntityRefImpl <em>Abstract Entity Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.softlang.megal.model.impl.AbstractEntityRefImpl
-	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getAbstractEntityRef()
-	 * @generated
-	 */
-	int ABSTRACT_ENTITY_REF = 2;
-
-	/**
-	 * The number of structural features of the '<em>Abstract Entity Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_ENTITY_REF_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Abstract Entity Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_ENTITY_REF_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.softlang.megal.model.impl.PointerEntityRefImpl <em>Pointer Entity Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.softlang.megal.model.impl.PointerEntityRefImpl
-	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getPointerEntityRef()
-	 * @generated
-	 */
-	int POINTER_ENTITY_REF = 3;
-
-	/**
-	 * The feature id for the '<em><b>Refered</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_ENTITY_REF__REFERED = ABSTRACT_ENTITY_REF_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Pointer Entity Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_ENTITY_REF_FEATURE_COUNT = ABSTRACT_ENTITY_REF_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Pointer Entity Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_ENTITY_REF_OPERATION_COUNT = ABSTRACT_ENTITY_REF_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.softlang.megal.model.impl.EntityImpl <em>Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -322,7 +293,7 @@ public interface ModelPackage extends EPackage {
 	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 4;
+	int ENTITY = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -370,7 +341,7 @@ public interface ModelPackage extends EPackage {
 	int ENTITY__TYPE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Generics</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Generics</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -404,7 +375,7 @@ public interface ModelPackage extends EPackage {
 	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getRelationType()
 	 * @generated
 	 */
-	int RELATION_TYPE = 5;
+	int RELATION_TYPE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -452,71 +423,6 @@ public interface ModelPackage extends EPackage {
 	int RELATION_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.softlang.megal.model.impl.AbstractRelationTypeRefImpl <em>Abstract Relation Type Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.softlang.megal.model.impl.AbstractRelationTypeRefImpl
-	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getAbstractRelationTypeRef()
-	 * @generated
-	 */
-	int ABSTRACT_RELATION_TYPE_REF = 6;
-
-	/**
-	 * The number of structural features of the '<em>Abstract Relation Type Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_RELATION_TYPE_REF_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Abstract Relation Type Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_RELATION_TYPE_REF_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.softlang.megal.model.impl.PointerRelationTypeRefImpl <em>Pointer Relation Type Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.softlang.megal.model.impl.PointerRelationTypeRefImpl
-	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getPointerRelationTypeRef()
-	 * @generated
-	 */
-	int POINTER_RELATION_TYPE_REF = 7;
-
-	/**
-	 * The feature id for the '<em><b>Refered</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_RELATION_TYPE_REF__REFERED = ABSTRACT_RELATION_TYPE_REF_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Pointer Relation Type Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_RELATION_TYPE_REF_FEATURE_COUNT = ABSTRACT_RELATION_TYPE_REF_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Pointer Relation Type Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_RELATION_TYPE_REF_OPERATION_COUNT = ABSTRACT_RELATION_TYPE_REF_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.softlang.megal.model.impl.EntityTypeImpl <em>Entity Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -524,7 +430,7 @@ public interface ModelPackage extends EPackage {
 	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getEntityType()
 	 * @generated
 	 */
-	int ENTITY_TYPE = 8;
+	int ENTITY_TYPE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -545,13 +451,22 @@ public interface ModelPackage extends EPackage {
 	int ENTITY_TYPE__SUPERTYPE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Is Top</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_TYPE__IS_TOP = 2;
+
+	/**
 	 * The number of structural features of the '<em>Entity Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_TYPE_FEATURE_COUNT = 2;
+	int ENTITY_TYPE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Entity Type</em>' class.
@@ -563,126 +478,6 @@ public interface ModelPackage extends EPackage {
 	int ENTITY_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.softlang.megal.model.impl.AbstractEntityTypeRefImpl <em>Abstract Entity Type Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.softlang.megal.model.impl.AbstractEntityTypeRefImpl
-	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getAbstractEntityTypeRef()
-	 * @generated
-	 */
-	int ABSTRACT_ENTITY_TYPE_REF = 9;
-
-	/**
-	 * The feature id for the '<em><b>Is Many</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_ENTITY_TYPE_REF__IS_MANY = 0;
-
-	/**
-	 * The number of structural features of the '<em>Abstract Entity Type Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_ENTITY_TYPE_REF_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Abstract Entity Type Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_ENTITY_TYPE_REF_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.softlang.megal.model.impl.TopEntityTypeRefImpl <em>Top Entity Type Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.softlang.megal.model.impl.TopEntityTypeRefImpl
-	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getTopEntityTypeRef()
-	 * @generated
-	 */
-	int TOP_ENTITY_TYPE_REF = 10;
-
-	/**
-	 * The feature id for the '<em><b>Is Many</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOP_ENTITY_TYPE_REF__IS_MANY = ABSTRACT_ENTITY_TYPE_REF__IS_MANY;
-
-	/**
-	 * The number of structural features of the '<em>Top Entity Type Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOP_ENTITY_TYPE_REF_FEATURE_COUNT = ABSTRACT_ENTITY_TYPE_REF_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Top Entity Type Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOP_ENTITY_TYPE_REF_OPERATION_COUNT = ABSTRACT_ENTITY_TYPE_REF_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.softlang.megal.model.impl.PointerEntityTypeRefImpl <em>Pointer Entity Type Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.softlang.megal.model.impl.PointerEntityTypeRefImpl
-	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getPointerEntityTypeRef()
-	 * @generated
-	 */
-	int POINTER_ENTITY_TYPE_REF = 11;
-
-	/**
-	 * The feature id for the '<em><b>Is Many</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_ENTITY_TYPE_REF__IS_MANY = ABSTRACT_ENTITY_TYPE_REF__IS_MANY;
-
-	/**
-	 * The feature id for the '<em><b>Refered</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_ENTITY_TYPE_REF__REFERED = ABSTRACT_ENTITY_TYPE_REF_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Pointer Entity Type Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_ENTITY_TYPE_REF_FEATURE_COUNT = ABSTRACT_ENTITY_TYPE_REF_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Pointer Entity Type Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_ENTITY_TYPE_REF_OPERATION_COUNT = ABSTRACT_ENTITY_TYPE_REF_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.softlang.megal.model.impl.SugarImpl <em>Sugar</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -690,7 +485,7 @@ public interface ModelPackage extends EPackage {
 	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getSugar()
 	 * @generated
 	 */
-	int SUGAR = 12;
+	int SUGAR = 5;
 
 	/**
 	 * The number of structural features of the '<em>Sugar</em>' class.
@@ -718,7 +513,7 @@ public interface ModelPackage extends EPackage {
 	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getFunctionApplication()
 	 * @generated
 	 */
-	int FUNCTION_APPLICATION = 13;
+	int FUNCTION_APPLICATION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -730,7 +525,7 @@ public interface ModelPackage extends EPackage {
 	int FUNCTION_APPLICATION__NAME = SUGAR_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Input</b></em>' containment reference.
+	 * The feature id for the '<em><b>Input</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -739,7 +534,7 @@ public interface ModelPackage extends EPackage {
 	int FUNCTION_APPLICATION__INPUT = SUGAR_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Output</b></em>' containment reference.
+	 * The feature id for the '<em><b>Output</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -766,99 +561,6 @@ public interface ModelPackage extends EPackage {
 	int FUNCTION_APPLICATION_OPERATION_COUNT = SUGAR_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.softlang.megal.model.impl.AbstractDeclarationRefImpl <em>Abstract Declaration Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.softlang.megal.model.impl.AbstractDeclarationRefImpl
-	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getAbstractDeclarationRef()
-	 * @generated
-	 */
-	int ABSTRACT_DECLARATION_REF = 14;
-
-	/**
-	 * The number of structural features of the '<em>Abstract Declaration Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_DECLARATION_REF_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Abstract Declaration Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_DECLARATION_REF_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.softlang.megal.model.impl.PreludeDeclarationRefImpl <em>Prelude Declaration Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.softlang.megal.model.impl.PreludeDeclarationRefImpl
-	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getPreludeDeclarationRef()
-	 * @generated
-	 */
-	int PRELUDE_DECLARATION_REF = 15;
-
-	/**
-	 * The number of structural features of the '<em>Prelude Declaration Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRELUDE_DECLARATION_REF_FEATURE_COUNT = ABSTRACT_DECLARATION_REF_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Prelude Declaration Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRELUDE_DECLARATION_REF_OPERATION_COUNT = ABSTRACT_DECLARATION_REF_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.softlang.megal.model.impl.PointerDeclarationRefImpl <em>Pointer Declaration Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.softlang.megal.model.impl.PointerDeclarationRefImpl
-	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getPointerDeclarationRef()
-	 * @generated
-	 */
-	int POINTER_DECLARATION_REF = 16;
-
-	/**
-	 * The feature id for the '<em><b>Refered</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_DECLARATION_REF__REFERED = ABSTRACT_DECLARATION_REF_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Pointer Declaration Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_DECLARATION_REF_FEATURE_COUNT = ABSTRACT_DECLARATION_REF_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Pointer Declaration Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINTER_DECLARATION_REF_OPERATION_COUNT = ABSTRACT_DECLARATION_REF_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.softlang.megal.model.impl.MegamodelImpl <em>Megamodel</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -866,7 +568,7 @@ public interface ModelPackage extends EPackage {
 	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getMegamodel()
 	 * @generated
 	 */
-	int MEGAMODEL = 17;
+	int MEGAMODEL = 7;
 
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
@@ -903,7 +605,7 @@ public interface ModelPackage extends EPackage {
 	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getBinding()
 	 * @generated
 	 */
-	int BINDING = 19;
+	int BINDING = 9;
 
 	/**
 	 * The number of structural features of the '<em>Binding</em>' class.
@@ -923,6 +625,51 @@ public interface ModelPackage extends EPackage {
 	 */
 	int BINDING_OPERATION_COUNT = ABSTRACT_PART_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link org.softlang.megal.model.impl.DeclaredImpl <em>Declared</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.softlang.megal.model.impl.DeclaredImpl
+	 * @see org.softlang.megal.model.impl.ModelPackageImpl#getDeclared()
+	 * @generated
+	 */
+	int DECLARED = 10;
+
+	/**
+	 * The feature id for the '<em><b>Is Many</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARED__IS_MANY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Definition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARED__DEFINITION = 1;
+
+	/**
+	 * The number of structural features of the '<em>Declared</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARED_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Declared</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARED_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link org.softlang.megal.model.Declaration <em>Declaration</em>}'.
@@ -1012,17 +759,6 @@ public interface ModelPackage extends EPackage {
 	EAttribute getDeclaration_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.softlang.megal.model.Declaration#getImports <em>Imports</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Imports</em>'.
-	 * @see org.softlang.megal.model.Declaration#getImports()
-	 * @see #getDeclaration()
-	 * @generated
-	 */
-	EReference getDeclaration_Imports();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.softlang.megal.model.Declaration#getConfiguration <em>Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1032,6 +768,61 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDeclaration_Configuration();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.softlang.megal.model.Declaration#getImports <em>Imports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Imports</em>'.
+	 * @see org.softlang.megal.model.Declaration#getImports()
+	 * @see #getDeclaration()
+	 * @generated
+	 */
+	EReference getDeclaration_Imports();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.softlang.megal.model.Declaration#getImportedEntities <em>Imported Entities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Imported Entities</em>'.
+	 * @see org.softlang.megal.model.Declaration#getImportedEntities()
+	 * @see #getDeclaration()
+	 * @generated
+	 */
+	EReference getDeclaration_ImportedEntities();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.softlang.megal.model.Declaration#getImportedRelationTypes <em>Imported Relation Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Imported Relation Types</em>'.
+	 * @see org.softlang.megal.model.Declaration#getImportedRelationTypes()
+	 * @see #getDeclaration()
+	 * @generated
+	 */
+	EReference getDeclaration_ImportedRelationTypes();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.softlang.megal.model.Declaration#getImportedRelations <em>Imported Relations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Imported Relations</em>'.
+	 * @see org.softlang.megal.model.Declaration#getImportedRelations()
+	 * @see #getDeclaration()
+	 * @generated
+	 */
+	EReference getDeclaration_ImportedRelations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.softlang.megal.model.Declaration#getImportedEntityTypes <em>Imported Entity Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Imported Entity Types</em>'.
+	 * @see org.softlang.megal.model.Declaration#getImportedEntityTypes()
+	 * @see #getDeclaration()
+	 * @generated
+	 */
+	EReference getDeclaration_ImportedEntityTypes();
 
 	/**
 	 * Returns the meta object for class '{@link org.softlang.megal.model.Relation <em>Relation</em>}'.
@@ -1044,10 +835,10 @@ public interface ModelPackage extends EPackage {
 	EClass getRelation();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.softlang.megal.model.Relation#getFrom <em>From</em>}'.
+	 * Returns the meta object for the reference '{@link org.softlang.megal.model.Relation#getFrom <em>From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>From</em>'.
+	 * @return the meta object for the reference '<em>From</em>'.
 	 * @see org.softlang.megal.model.Relation#getFrom()
 	 * @see #getRelation()
 	 * @generated
@@ -1055,10 +846,10 @@ public interface ModelPackage extends EPackage {
 	EReference getRelation_From();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.softlang.megal.model.Relation#getTo <em>To</em>}'.
+	 * Returns the meta object for the reference '{@link org.softlang.megal.model.Relation#getTo <em>To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>To</em>'.
+	 * @return the meta object for the reference '<em>To</em>'.
 	 * @see org.softlang.megal.model.Relation#getTo()
 	 * @see #getRelation()
 	 * @generated
@@ -1066,46 +857,15 @@ public interface ModelPackage extends EPackage {
 	EReference getRelation_To();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.softlang.megal.model.Relation#getType <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.softlang.megal.model.Relation#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Type</em>'.
+	 * @return the meta object for the reference '<em>Type</em>'.
 	 * @see org.softlang.megal.model.Relation#getType()
 	 * @see #getRelation()
 	 * @generated
 	 */
 	EReference getRelation_Type();
-
-	/**
-	 * Returns the meta object for class '{@link org.softlang.megal.model.AbstractEntityRef <em>Abstract Entity Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Abstract Entity Ref</em>'.
-	 * @see org.softlang.megal.model.AbstractEntityRef
-	 * @generated
-	 */
-	EClass getAbstractEntityRef();
-
-	/**
-	 * Returns the meta object for class '{@link org.softlang.megal.model.PointerEntityRef <em>Pointer Entity Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pointer Entity Ref</em>'.
-	 * @see org.softlang.megal.model.PointerEntityRef
-	 * @generated
-	 */
-	EClass getPointerEntityRef();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.softlang.megal.model.PointerEntityRef#getRefered <em>Refered</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Refered</em>'.
-	 * @see org.softlang.megal.model.PointerEntityRef#getRefered()
-	 * @see #getPointerEntityRef()
-	 * @generated
-	 */
-	EReference getPointerEntityRef_Refered();
 
 	/**
 	 * Returns the meta object for class '{@link org.softlang.megal.model.Entity <em>Entity</em>}'.
@@ -1173,10 +933,10 @@ public interface ModelPackage extends EPackage {
 	EReference getEntity_Type();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.softlang.megal.model.Entity#getGenerics <em>Generics</em>}'.
+	 * Returns the meta object for the reference list '{@link org.softlang.megal.model.Entity#getGenerics <em>Generics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Generics</em>'.
+	 * @return the meta object for the reference list '<em>Generics</em>'.
 	 * @see org.softlang.megal.model.Entity#getGenerics()
 	 * @see #getEntity()
 	 * @generated
@@ -1227,37 +987,6 @@ public interface ModelPackage extends EPackage {
 	EReference getRelationType_ToDomain();
 
 	/**
-	 * Returns the meta object for class '{@link org.softlang.megal.model.AbstractRelationTypeRef <em>Abstract Relation Type Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Abstract Relation Type Ref</em>'.
-	 * @see org.softlang.megal.model.AbstractRelationTypeRef
-	 * @generated
-	 */
-	EClass getAbstractRelationTypeRef();
-
-	/**
-	 * Returns the meta object for class '{@link org.softlang.megal.model.PointerRelationTypeRef <em>Pointer Relation Type Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pointer Relation Type Ref</em>'.
-	 * @see org.softlang.megal.model.PointerRelationTypeRef
-	 * @generated
-	 */
-	EClass getPointerRelationTypeRef();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.softlang.megal.model.PointerRelationTypeRef#getRefered <em>Refered</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Refered</em>'.
-	 * @see org.softlang.megal.model.PointerRelationTypeRef#getRefered()
-	 * @see #getPointerRelationTypeRef()
-	 * @generated
-	 */
-	EReference getPointerRelationTypeRef_Refered();
-
-	/**
 	 * Returns the meta object for class '{@link org.softlang.megal.model.EntityType <em>Entity Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1290,56 +1019,15 @@ public interface ModelPackage extends EPackage {
 	EReference getEntityType_Supertype();
 
 	/**
-	 * Returns the meta object for class '{@link org.softlang.megal.model.AbstractEntityTypeRef <em>Abstract Entity Type Ref</em>}'.
+	 * Returns the meta object for the attribute '{@link org.softlang.megal.model.EntityType#isIsTop <em>Is Top</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Abstract Entity Type Ref</em>'.
-	 * @see org.softlang.megal.model.AbstractEntityTypeRef
+	 * @return the meta object for the attribute '<em>Is Top</em>'.
+	 * @see org.softlang.megal.model.EntityType#isIsTop()
+	 * @see #getEntityType()
 	 * @generated
 	 */
-	EClass getAbstractEntityTypeRef();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.softlang.megal.model.AbstractEntityTypeRef#isIsMany <em>Is Many</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Many</em>'.
-	 * @see org.softlang.megal.model.AbstractEntityTypeRef#isIsMany()
-	 * @see #getAbstractEntityTypeRef()
-	 * @generated
-	 */
-	EAttribute getAbstractEntityTypeRef_IsMany();
-
-	/**
-	 * Returns the meta object for class '{@link org.softlang.megal.model.TopEntityTypeRef <em>Top Entity Type Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Top Entity Type Ref</em>'.
-	 * @see org.softlang.megal.model.TopEntityTypeRef
-	 * @generated
-	 */
-	EClass getTopEntityTypeRef();
-
-	/**
-	 * Returns the meta object for class '{@link org.softlang.megal.model.PointerEntityTypeRef <em>Pointer Entity Type Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pointer Entity Type Ref</em>'.
-	 * @see org.softlang.megal.model.PointerEntityTypeRef
-	 * @generated
-	 */
-	EClass getPointerEntityTypeRef();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.softlang.megal.model.PointerEntityTypeRef#getRefered <em>Refered</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Refered</em>'.
-	 * @see org.softlang.megal.model.PointerEntityTypeRef#getRefered()
-	 * @see #getPointerEntityTypeRef()
-	 * @generated
-	 */
-	EReference getPointerEntityTypeRef_Refered();
+	EAttribute getEntityType_IsTop();
 
 	/**
 	 * Returns the meta object for class '{@link org.softlang.megal.model.Sugar <em>Sugar</em>}'.
@@ -1373,10 +1061,10 @@ public interface ModelPackage extends EPackage {
 	EAttribute getFunctionApplication_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.softlang.megal.model.FunctionApplication#getInput <em>Input</em>}'.
+	 * Returns the meta object for the reference '{@link org.softlang.megal.model.FunctionApplication#getInput <em>Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Input</em>'.
+	 * @return the meta object for the reference '<em>Input</em>'.
 	 * @see org.softlang.megal.model.FunctionApplication#getInput()
 	 * @see #getFunctionApplication()
 	 * @generated
@@ -1384,56 +1072,15 @@ public interface ModelPackage extends EPackage {
 	EReference getFunctionApplication_Input();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.softlang.megal.model.FunctionApplication#getOutput <em>Output</em>}'.
+	 * Returns the meta object for the reference '{@link org.softlang.megal.model.FunctionApplication#getOutput <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Output</em>'.
+	 * @return the meta object for the reference '<em>Output</em>'.
 	 * @see org.softlang.megal.model.FunctionApplication#getOutput()
 	 * @see #getFunctionApplication()
 	 * @generated
 	 */
 	EReference getFunctionApplication_Output();
-
-	/**
-	 * Returns the meta object for class '{@link org.softlang.megal.model.AbstractDeclarationRef <em>Abstract Declaration Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Abstract Declaration Ref</em>'.
-	 * @see org.softlang.megal.model.AbstractDeclarationRef
-	 * @generated
-	 */
-	EClass getAbstractDeclarationRef();
-
-	/**
-	 * Returns the meta object for class '{@link org.softlang.megal.model.PreludeDeclarationRef <em>Prelude Declaration Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Prelude Declaration Ref</em>'.
-	 * @see org.softlang.megal.model.PreludeDeclarationRef
-	 * @generated
-	 */
-	EClass getPreludeDeclarationRef();
-
-	/**
-	 * Returns the meta object for class '{@link org.softlang.megal.model.PointerDeclarationRef <em>Pointer Declaration Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pointer Declaration Ref</em>'.
-	 * @see org.softlang.megal.model.PointerDeclarationRef
-	 * @generated
-	 */
-	EClass getPointerDeclarationRef();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.softlang.megal.model.PointerDeclarationRef#getRefered <em>Refered</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Refered</em>'.
-	 * @see org.softlang.megal.model.PointerDeclarationRef#getRefered()
-	 * @see #getPointerDeclarationRef()
-	 * @generated
-	 */
-	EReference getPointerDeclarationRef_Refered();
 
 	/**
 	 * Returns the meta object for class '{@link org.softlang.megal.model.Megamodel <em>Megamodel</em>}'.
@@ -1475,6 +1122,38 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBinding();
+
+	/**
+	 * Returns the meta object for class '{@link org.softlang.megal.model.Declared <em>Declared</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Declared</em>'.
+	 * @see org.softlang.megal.model.Declared
+	 * @generated
+	 */
+	EClass getDeclared();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.softlang.megal.model.Declared#isIsMany <em>Is Many</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Many</em>'.
+	 * @see org.softlang.megal.model.Declared#isIsMany()
+	 * @see #getDeclared()
+	 * @generated
+	 */
+	EAttribute getDeclared_IsMany();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.softlang.megal.model.Declared#getDefinition <em>Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Definition</em>'.
+	 * @see org.softlang.megal.model.Declared#getDefinition()
+	 * @see #getDeclared()
+	 * @generated
+	 */
+	EReference getDeclared_Definition();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1566,7 +1245,15 @@ public interface ModelPackage extends EPackage {
 		EAttribute DECLARATION__NAME = eINSTANCE.getDeclaration_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Configuration</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DECLARATION__CONFIGURATION = eINSTANCE.getDeclaration_Configuration();
+
+		/**
+		 * The meta object literal for the '<em><b>Imports</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1574,12 +1261,36 @@ public interface ModelPackage extends EPackage {
 		EReference DECLARATION__IMPORTS = eINSTANCE.getDeclaration_Imports();
 
 		/**
-		 * The meta object literal for the '<em><b>Configuration</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Imported Entities</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DECLARATION__CONFIGURATION = eINSTANCE.getDeclaration_Configuration();
+		EReference DECLARATION__IMPORTED_ENTITIES = eINSTANCE.getDeclaration_ImportedEntities();
+
+		/**
+		 * The meta object literal for the '<em><b>Imported Relation Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DECLARATION__IMPORTED_RELATION_TYPES = eINSTANCE.getDeclaration_ImportedRelationTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Imported Relations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DECLARATION__IMPORTED_RELATIONS = eINSTANCE.getDeclaration_ImportedRelations();
+
+		/**
+		 * The meta object literal for the '<em><b>Imported Entity Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DECLARATION__IMPORTED_ENTITY_TYPES = eINSTANCE.getDeclaration_ImportedEntityTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.softlang.megal.model.impl.RelationImpl <em>Relation</em>}' class.
@@ -1592,7 +1303,7 @@ public interface ModelPackage extends EPackage {
 		EClass RELATION = eINSTANCE.getRelation();
 
 		/**
-		 * The meta object literal for the '<em><b>From</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1600,7 +1311,7 @@ public interface ModelPackage extends EPackage {
 		EReference RELATION__FROM = eINSTANCE.getRelation_From();
 
 		/**
-		 * The meta object literal for the '<em><b>To</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>To</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1608,40 +1319,12 @@ public interface ModelPackage extends EPackage {
 		EReference RELATION__TO = eINSTANCE.getRelation_To();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference RELATION__TYPE = eINSTANCE.getRelation_Type();
-
-		/**
-		 * The meta object literal for the '{@link org.softlang.megal.model.impl.AbstractEntityRefImpl <em>Abstract Entity Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.softlang.megal.model.impl.AbstractEntityRefImpl
-		 * @see org.softlang.megal.model.impl.ModelPackageImpl#getAbstractEntityRef()
-		 * @generated
-		 */
-		EClass ABSTRACT_ENTITY_REF = eINSTANCE.getAbstractEntityRef();
-
-		/**
-		 * The meta object literal for the '{@link org.softlang.megal.model.impl.PointerEntityRefImpl <em>Pointer Entity Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.softlang.megal.model.impl.PointerEntityRefImpl
-		 * @see org.softlang.megal.model.impl.ModelPackageImpl#getPointerEntityRef()
-		 * @generated
-		 */
-		EClass POINTER_ENTITY_REF = eINSTANCE.getPointerEntityRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Refered</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference POINTER_ENTITY_REF__REFERED = eINSTANCE.getPointerEntityRef_Refered();
 
 		/**
 		 * The meta object literal for the '{@link org.softlang.megal.model.impl.EntityImpl <em>Entity</em>}' class.
@@ -1694,7 +1377,7 @@ public interface ModelPackage extends EPackage {
 		EReference ENTITY__TYPE = eINSTANCE.getEntity_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Generics</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Generics</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1736,34 +1419,6 @@ public interface ModelPackage extends EPackage {
 		EReference RELATION_TYPE__TO_DOMAIN = eINSTANCE.getRelationType_ToDomain();
 
 		/**
-		 * The meta object literal for the '{@link org.softlang.megal.model.impl.AbstractRelationTypeRefImpl <em>Abstract Relation Type Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.softlang.megal.model.impl.AbstractRelationTypeRefImpl
-		 * @see org.softlang.megal.model.impl.ModelPackageImpl#getAbstractRelationTypeRef()
-		 * @generated
-		 */
-		EClass ABSTRACT_RELATION_TYPE_REF = eINSTANCE.getAbstractRelationTypeRef();
-
-		/**
-		 * The meta object literal for the '{@link org.softlang.megal.model.impl.PointerRelationTypeRefImpl <em>Pointer Relation Type Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.softlang.megal.model.impl.PointerRelationTypeRefImpl
-		 * @see org.softlang.megal.model.impl.ModelPackageImpl#getPointerRelationTypeRef()
-		 * @generated
-		 */
-		EClass POINTER_RELATION_TYPE_REF = eINSTANCE.getPointerRelationTypeRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Refered</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference POINTER_RELATION_TYPE_REF__REFERED = eINSTANCE.getPointerRelationTypeRef_Refered();
-
-		/**
 		 * The meta object literal for the '{@link org.softlang.megal.model.impl.EntityTypeImpl <em>Entity Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1790,50 +1445,12 @@ public interface ModelPackage extends EPackage {
 		EReference ENTITY_TYPE__SUPERTYPE = eINSTANCE.getEntityType_Supertype();
 
 		/**
-		 * The meta object literal for the '{@link org.softlang.megal.model.impl.AbstractEntityTypeRefImpl <em>Abstract Entity Type Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.softlang.megal.model.impl.AbstractEntityTypeRefImpl
-		 * @see org.softlang.megal.model.impl.ModelPackageImpl#getAbstractEntityTypeRef()
-		 * @generated
-		 */
-		EClass ABSTRACT_ENTITY_TYPE_REF = eINSTANCE.getAbstractEntityTypeRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Many</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Is Top</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ABSTRACT_ENTITY_TYPE_REF__IS_MANY = eINSTANCE.getAbstractEntityTypeRef_IsMany();
-
-		/**
-		 * The meta object literal for the '{@link org.softlang.megal.model.impl.TopEntityTypeRefImpl <em>Top Entity Type Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.softlang.megal.model.impl.TopEntityTypeRefImpl
-		 * @see org.softlang.megal.model.impl.ModelPackageImpl#getTopEntityTypeRef()
-		 * @generated
-		 */
-		EClass TOP_ENTITY_TYPE_REF = eINSTANCE.getTopEntityTypeRef();
-
-		/**
-		 * The meta object literal for the '{@link org.softlang.megal.model.impl.PointerEntityTypeRefImpl <em>Pointer Entity Type Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.softlang.megal.model.impl.PointerEntityTypeRefImpl
-		 * @see org.softlang.megal.model.impl.ModelPackageImpl#getPointerEntityTypeRef()
-		 * @generated
-		 */
-		EClass POINTER_ENTITY_TYPE_REF = eINSTANCE.getPointerEntityTypeRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Refered</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference POINTER_ENTITY_TYPE_REF__REFERED = eINSTANCE.getPointerEntityTypeRef_Refered();
+		EAttribute ENTITY_TYPE__IS_TOP = eINSTANCE.getEntityType_IsTop();
 
 		/**
 		 * The meta object literal for the '{@link org.softlang.megal.model.impl.SugarImpl <em>Sugar</em>}' class.
@@ -1864,7 +1481,7 @@ public interface ModelPackage extends EPackage {
 		EAttribute FUNCTION_APPLICATION__NAME = eINSTANCE.getFunctionApplication_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Input</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Input</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1872,50 +1489,12 @@ public interface ModelPackage extends EPackage {
 		EReference FUNCTION_APPLICATION__INPUT = eINSTANCE.getFunctionApplication_Input();
 
 		/**
-		 * The meta object literal for the '<em><b>Output</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Output</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference FUNCTION_APPLICATION__OUTPUT = eINSTANCE.getFunctionApplication_Output();
-
-		/**
-		 * The meta object literal for the '{@link org.softlang.megal.model.impl.AbstractDeclarationRefImpl <em>Abstract Declaration Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.softlang.megal.model.impl.AbstractDeclarationRefImpl
-		 * @see org.softlang.megal.model.impl.ModelPackageImpl#getAbstractDeclarationRef()
-		 * @generated
-		 */
-		EClass ABSTRACT_DECLARATION_REF = eINSTANCE.getAbstractDeclarationRef();
-
-		/**
-		 * The meta object literal for the '{@link org.softlang.megal.model.impl.PreludeDeclarationRefImpl <em>Prelude Declaration Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.softlang.megal.model.impl.PreludeDeclarationRefImpl
-		 * @see org.softlang.megal.model.impl.ModelPackageImpl#getPreludeDeclarationRef()
-		 * @generated
-		 */
-		EClass PRELUDE_DECLARATION_REF = eINSTANCE.getPreludeDeclarationRef();
-
-		/**
-		 * The meta object literal for the '{@link org.softlang.megal.model.impl.PointerDeclarationRefImpl <em>Pointer Declaration Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.softlang.megal.model.impl.PointerDeclarationRefImpl
-		 * @see org.softlang.megal.model.impl.ModelPackageImpl#getPointerDeclarationRef()
-		 * @generated
-		 */
-		EClass POINTER_DECLARATION_REF = eINSTANCE.getPointerDeclarationRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Refered</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference POINTER_DECLARATION_REF__REFERED = eINSTANCE.getPointerDeclarationRef_Refered();
 
 		/**
 		 * The meta object literal for the '{@link org.softlang.megal.model.impl.MegamodelImpl <em>Megamodel</em>}' class.
@@ -1954,6 +1533,32 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BINDING = eINSTANCE.getBinding();
+
+		/**
+		 * The meta object literal for the '{@link org.softlang.megal.model.impl.DeclaredImpl <em>Declared</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.softlang.megal.model.impl.DeclaredImpl
+		 * @see org.softlang.megal.model.impl.ModelPackageImpl#getDeclared()
+		 * @generated
+		 */
+		EClass DECLARED = eINSTANCE.getDeclared();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Many</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DECLARED__IS_MANY = eINSTANCE.getDeclared_IsMany();
+
+		/**
+		 * The meta object literal for the '<em><b>Definition</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DECLARED__DEFINITION = eINSTANCE.getDeclared_Definition();
 
 	}
 

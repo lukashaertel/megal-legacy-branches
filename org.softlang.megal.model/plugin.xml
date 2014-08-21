@@ -4,12 +4,6 @@
     <!-- @generated model -->
     <package class="org.softlang.megal.model.ModelPackage" genModel="model/model.genmodel" uri="http://softlang.wikidot.com/megal"/>
   </extension>
-  <extension id="org.softlang.megal.model.DeclarationQueries" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.softlang.megal.model.DeclarationQueries" id="org.softlang.megal.model.DeclarationQueries"/>
-  </extension>
-  <extension id="org.softlang.megal.query.DeclarationQueries" point="org.eclipse.incquery.runtime.queryspecification">
-    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.softlang.megal.query.DeclarationQueries" id="org.softlang.megal.query.DeclarationQueries"/>
-  </extension>
   <extension id="org.softlang.megal.query.Declaration" point="org.eclipse.incquery.runtime.queryspecification">
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.softlang.megal.query.Declaration" id="org.softlang.megal.query.Declaration"/>
   </extension>

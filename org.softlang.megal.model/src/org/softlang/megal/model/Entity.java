@@ -141,12 +141,12 @@ public interface Entity extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' containment reference.
-	 * @see #setType(AbstractEntityTypeRef)
+	 * @see #setType(Declared)
 	 * @see org.softlang.megal.model.ModelPackage#getEntity_Type()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	AbstractEntityTypeRef getType();
+	Declared getType();
 
 	/**
 	 * Sets the value of the '{@link org.softlang.megal.model.Entity#getType <em>Type</em>}' containment reference.
@@ -156,22 +156,22 @@ public interface Entity extends EObject {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(AbstractEntityTypeRef value);
+	void setType(Declared value);
 
 	/**
-	 * Returns the value of the '<em><b>Generics</b></em>' containment reference list.
-	 * The list contents are of type {@link org.softlang.megal.model.AbstractEntityRef}.
+	 * Returns the value of the '<em><b>Generics</b></em>' reference list.
+	 * The list contents are of type {@link org.softlang.megal.model.Entity}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Generics</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Generics</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Generics</em>' containment reference list.
+	 * @return the value of the '<em>Generics</em>' reference list.
 	 * @see org.softlang.megal.model.ModelPackage#getEntity_Generics()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	EList<AbstractEntityRef> getGenerics();
+	EList<Entity> getGenerics();
 
 } // Entity

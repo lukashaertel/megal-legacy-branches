@@ -11,7 +11,7 @@ Declaration:
 // Not required to be specified, inferred else
 	('model' overrideName=QualifiedID ('configured' 'in' configuration=QualifiedID)?)? (
 	// Model imports
-	'import' imports+=AbstractDeclarationRef |
+	'import' imports+=[Declaration|QualifiedID] |
 	// Instance declarations
 	relations+=Relation | entities+=Entity |
 	// Type declarations
@@ -19,77 +19,34 @@ Declaration:
 	// Sugar
 	sugar+=Sugar)*;
 
-AbstractDeclarationRef:
-	PreludeDeclarationRef | PointerDeclarationRef;
-
-PreludeDeclarationRef:
-	{PreludeDeclarationRef} 'Prelude';
-
-PointerDeclarationRef:
-	refered=[Declaration|QualifiedID];
-
 	/**
 	 * Declares an entity
 	 */
 Entity:
-	(isParameter?='?' | isDependent?='!')? name=QualifiedID ('[' representativeName=STRING ']')? ':'
-	type=AbstractEntityTypeRef
+	(isParameter?='?' | isDependent?='!')? name=QualifiedID ('[' representativeName=STRING ']')? ':' type=Declared
 	// Optional generic section
-	('[' generics+=AbstractEntityRef ('->' generics+=AbstractEntityRef)* ']')?;
-
-AbstractEntityRef:
-	PointerEntityRef;
-
-PointerEntityRef:
-	refered=[Entity|QualifiedID];
+	('[' generics+=[Entity|QualifiedID] ('->' generics+=[Entity|QualifiedID])* ']')?;
 
 	/**
 	 * Declares a relation
 	 */
 Relation:
-	from=AbstractEntityRef type=AbstractRelationTypeRef to=AbstractEntityRef;
+	from=[Entity|QualifiedID] type=[RelationType|QualifiedID] to=[Entity|QualifiedID];
 
 	/**
 	 * Declares an entity type
 	 */
 EntityType:
-	name=QualifiedID '<' supertype=AbstractEntityTypeRef;
+	name=QualifiedID ('=' isTop?='top' | '<' supertype=Declared);
 
-	/**
-	 * Use of an entity type
-	 */
-AbstractEntityTypeRef:
-	TopEntityTypeRef | PointerEntityTypeRef;
-
-	/**
-	 * Top entity type that is not explicitly declared
-	 */
-TopEntityTypeRef:
-	{TopEntityTypeRef} 'Entity' isMany?="+"?;
-
-	/**
-	 * Reference to a declared entity type
-	 */
-PointerEntityTypeRef:
-	refered=[EntityType|QualifiedID] isMany?="+"?;
+Declared:
+	definition=[EntityType|QualifiedID] isMany?="+"?;
 
 	/**
 	 * Declares a relation type
 	 */
 RelationType:
-	name=QualifiedID '<' fromDomain=AbstractEntityTypeRef '*' toDomain=AbstractEntityTypeRef;
-
-	/**
-	 * Use of a relation type
-	 */
-AbstractRelationTypeRef:
-	PointerRelationTypeRef;
-
-	/**
-	 * Reference to a declared relation type
-	 */
-PointerRelationTypeRef:
-	refered=[RelationType|QualifiedID];
+	name=QualifiedID '<' fromDomain=Declared '*' toDomain=Declared;
 
 	/**
 	 * Declarations especiale
@@ -102,7 +59,7 @@ Sugar:
 	 */
 FunctionApplication:
 // TODO: Can someone justify this notation?
-	name=QualifiedID '(' input=AbstractEntityRef ')' '|' '->' output=AbstractEntityRef;
+	name=QualifiedID '(' input=[Entity|QualifiedID] ')' '|' '->' output=[Entity|QualifiedID];
 
 QualifiedID:
 	ID ('.' ID)*;

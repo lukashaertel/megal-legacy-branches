@@ -3,14 +3,13 @@
 package org.softlang.megal.model.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.softlang.megal.model.AbstractEntityRef;
+import org.softlang.megal.model.Entity;
 import org.softlang.megal.model.FunctionApplication;
 import org.softlang.megal.model.ModelPackage;
 
@@ -51,24 +50,24 @@ public class FunctionApplicationImpl extends SugarImpl implements FunctionApplic
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInput() <em>Input</em>}' containment reference.
+	 * The cached value of the '{@link #getInput() <em>Input</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInput()
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractEntityRef input;
+	protected Entity input;
 
 	/**
-	 * The cached value of the '{@link #getOutput() <em>Output</em>}' containment reference.
+	 * The cached value of the '{@link #getOutput() <em>Output</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOutput()
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractEntityRef output;
+	protected Entity output;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,7 +114,15 @@ public class FunctionApplicationImpl extends SugarImpl implements FunctionApplic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractEntityRef getInput() {
+	public Entity getInput() {
+		if (input != null && input.eIsProxy()) {
+			InternalEObject oldInput = (InternalEObject)input;
+			input = (Entity)eResolveProxy(oldInput);
+			if (input != oldInput) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.FUNCTION_APPLICATION__INPUT, oldInput, input));
+			}
+		}
 		return input;
 	}
 
@@ -124,14 +131,20 @@ public class FunctionApplicationImpl extends SugarImpl implements FunctionApplic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetInput(AbstractEntityRef newInput, NotificationChain msgs) {
-		AbstractEntityRef oldInput = input;
+	public Entity basicGetInput() {
+		return input;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInput(Entity newInput) {
+		Entity oldInput = input;
 		input = newInput;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelPackage.FUNCTION_APPLICATION__INPUT, oldInput, newInput);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.FUNCTION_APPLICATION__INPUT, oldInput, input));
 	}
 
 	/**
@@ -139,26 +152,15 @@ public class FunctionApplicationImpl extends SugarImpl implements FunctionApplic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInput(AbstractEntityRef newInput) {
-		if (newInput != input) {
-			NotificationChain msgs = null;
-			if (input != null)
-				msgs = ((InternalEObject)input).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelPackage.FUNCTION_APPLICATION__INPUT, null, msgs);
-			if (newInput != null)
-				msgs = ((InternalEObject)newInput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelPackage.FUNCTION_APPLICATION__INPUT, null, msgs);
-			msgs = basicSetInput(newInput, msgs);
-			if (msgs != null) msgs.dispatch();
+	public Entity getOutput() {
+		if (output != null && output.eIsProxy()) {
+			InternalEObject oldOutput = (InternalEObject)output;
+			output = (Entity)eResolveProxy(oldOutput);
+			if (output != oldOutput) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.FUNCTION_APPLICATION__OUTPUT, oldOutput, output));
+			}
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.FUNCTION_APPLICATION__INPUT, newInput, newInput));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AbstractEntityRef getOutput() {
 		return output;
 	}
 
@@ -167,49 +169,20 @@ public class FunctionApplicationImpl extends SugarImpl implements FunctionApplic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOutput(AbstractEntityRef newOutput, NotificationChain msgs) {
-		AbstractEntityRef oldOutput = output;
+	public Entity basicGetOutput() {
+		return output;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOutput(Entity newOutput) {
+		Entity oldOutput = output;
 		output = newOutput;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelPackage.FUNCTION_APPLICATION__OUTPUT, oldOutput, newOutput);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOutput(AbstractEntityRef newOutput) {
-		if (newOutput != output) {
-			NotificationChain msgs = null;
-			if (output != null)
-				msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelPackage.FUNCTION_APPLICATION__OUTPUT, null, msgs);
-			if (newOutput != null)
-				msgs = ((InternalEObject)newOutput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelPackage.FUNCTION_APPLICATION__OUTPUT, null, msgs);
-			msgs = basicSetOutput(newOutput, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.FUNCTION_APPLICATION__OUTPUT, newOutput, newOutput));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ModelPackage.FUNCTION_APPLICATION__INPUT:
-				return basicSetInput(null, msgs);
-			case ModelPackage.FUNCTION_APPLICATION__OUTPUT:
-				return basicSetOutput(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.FUNCTION_APPLICATION__OUTPUT, oldOutput, output));
 	}
 
 	/**
@@ -223,9 +196,11 @@ public class FunctionApplicationImpl extends SugarImpl implements FunctionApplic
 			case ModelPackage.FUNCTION_APPLICATION__NAME:
 				return getName();
 			case ModelPackage.FUNCTION_APPLICATION__INPUT:
-				return getInput();
+				if (resolve) return getInput();
+				return basicGetInput();
 			case ModelPackage.FUNCTION_APPLICATION__OUTPUT:
-				return getOutput();
+				if (resolve) return getOutput();
+				return basicGetOutput();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -242,10 +217,10 @@ public class FunctionApplicationImpl extends SugarImpl implements FunctionApplic
 				setName((String)newValue);
 				return;
 			case ModelPackage.FUNCTION_APPLICATION__INPUT:
-				setInput((AbstractEntityRef)newValue);
+				setInput((Entity)newValue);
 				return;
 			case ModelPackage.FUNCTION_APPLICATION__OUTPUT:
-				setOutput((AbstractEntityRef)newValue);
+				setOutput((Entity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -263,10 +238,10 @@ public class FunctionApplicationImpl extends SugarImpl implements FunctionApplic
 				setName(NAME_EDEFAULT);
 				return;
 			case ModelPackage.FUNCTION_APPLICATION__INPUT:
-				setInput((AbstractEntityRef)null);
+				setInput((Entity)null);
 				return;
 			case ModelPackage.FUNCTION_APPLICATION__OUTPUT:
-				setOutput((AbstractEntityRef)null);
+				setOutput((Entity)null);
 				return;
 		}
 		super.eUnset(featureID);

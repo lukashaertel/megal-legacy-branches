@@ -5,27 +5,30 @@ package org.softlang.megal.model.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.softlang.megal.model.AbstractEntityTypeRef;
+import org.softlang.megal.model.Declared;
+import org.softlang.megal.model.EntityType;
 import org.softlang.megal.model.ModelPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Abstract Entity Type Ref</b></em>'.
+ * An implementation of the model object '<em><b>Declared</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.softlang.megal.model.impl.AbstractEntityTypeRefImpl#isIsMany <em>Is Many</em>}</li>
+ *   <li>{@link org.softlang.megal.model.impl.DeclaredImpl#isIsMany <em>Is Many</em>}</li>
+ *   <li>{@link org.softlang.megal.model.impl.DeclaredImpl#getDefinition <em>Definition</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class AbstractEntityTypeRefImpl extends MinimalEObjectImpl.Container implements AbstractEntityTypeRef {
+public class DeclaredImpl extends MinimalEObjectImpl.Container implements Declared {
 	/**
 	 * The default value of the '{@link #isIsMany() <em>Is Many</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -47,11 +50,21 @@ public abstract class AbstractEntityTypeRefImpl extends MinimalEObjectImpl.Conta
 	protected boolean isMany = IS_MANY_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getDefinition() <em>Definition</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefinition()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityType definition;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AbstractEntityTypeRefImpl() {
+	protected DeclaredImpl() {
 		super();
 	}
 
@@ -62,7 +75,7 @@ public abstract class AbstractEntityTypeRefImpl extends MinimalEObjectImpl.Conta
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ModelPackage.Literals.ABSTRACT_ENTITY_TYPE_REF;
+		return ModelPackage.Literals.DECLARED;
 	}
 
 	/**
@@ -83,7 +96,45 @@ public abstract class AbstractEntityTypeRefImpl extends MinimalEObjectImpl.Conta
 		boolean oldIsMany = isMany;
 		isMany = newIsMany;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ABSTRACT_ENTITY_TYPE_REF__IS_MANY, oldIsMany, isMany));
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.DECLARED__IS_MANY, oldIsMany, isMany));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityType getDefinition() {
+		if (definition != null && definition.eIsProxy()) {
+			InternalEObject oldDefinition = (InternalEObject)definition;
+			definition = (EntityType)eResolveProxy(oldDefinition);
+			if (definition != oldDefinition) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.DECLARED__DEFINITION, oldDefinition, definition));
+			}
+		}
+		return definition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityType basicGetDefinition() {
+		return definition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefinition(EntityType newDefinition) {
+		EntityType oldDefinition = definition;
+		definition = newDefinition;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.DECLARED__DEFINITION, oldDefinition, definition));
 	}
 
 	/**
@@ -94,8 +145,11 @@ public abstract class AbstractEntityTypeRefImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModelPackage.ABSTRACT_ENTITY_TYPE_REF__IS_MANY:
+			case ModelPackage.DECLARED__IS_MANY:
 				return isIsMany();
+			case ModelPackage.DECLARED__DEFINITION:
+				if (resolve) return getDefinition();
+				return basicGetDefinition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,8 +162,11 @@ public abstract class AbstractEntityTypeRefImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ModelPackage.ABSTRACT_ENTITY_TYPE_REF__IS_MANY:
+			case ModelPackage.DECLARED__IS_MANY:
 				setIsMany((Boolean)newValue);
+				return;
+			case ModelPackage.DECLARED__DEFINITION:
+				setDefinition((EntityType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +180,11 @@ public abstract class AbstractEntityTypeRefImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ModelPackage.ABSTRACT_ENTITY_TYPE_REF__IS_MANY:
+			case ModelPackage.DECLARED__IS_MANY:
 				setIsMany(IS_MANY_EDEFAULT);
+				return;
+			case ModelPackage.DECLARED__DEFINITION:
+				setDefinition((EntityType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,8 +198,10 @@ public abstract class AbstractEntityTypeRefImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModelPackage.ABSTRACT_ENTITY_TYPE_REF__IS_MANY:
+			case ModelPackage.DECLARED__IS_MANY:
 				return isMany != IS_MANY_EDEFAULT;
+			case ModelPackage.DECLARED__DEFINITION:
+				return definition != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -160,4 +222,4 @@ public abstract class AbstractEntityTypeRefImpl extends MinimalEObjectImpl.Conta
 		return result.toString();
 	}
 
-} //AbstractEntityTypeRefImpl
+} //DeclaredImpl

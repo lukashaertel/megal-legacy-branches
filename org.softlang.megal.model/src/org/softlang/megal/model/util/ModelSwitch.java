@@ -79,19 +79,6 @@ public class ModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelPackage.ABSTRACT_ENTITY_REF: {
-				AbstractEntityRef abstractEntityRef = (AbstractEntityRef)theEObject;
-				T result = caseAbstractEntityRef(abstractEntityRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelPackage.POINTER_ENTITY_REF: {
-				PointerEntityRef pointerEntityRef = (PointerEntityRef)theEObject;
-				T result = casePointerEntityRef(pointerEntityRef);
-				if (result == null) result = caseAbstractEntityRef(pointerEntityRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ModelPackage.ENTITY: {
 				Entity entity = (Entity)theEObject;
 				T result = caseEntity(entity);
@@ -104,42 +91,9 @@ public class ModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelPackage.ABSTRACT_RELATION_TYPE_REF: {
-				AbstractRelationTypeRef abstractRelationTypeRef = (AbstractRelationTypeRef)theEObject;
-				T result = caseAbstractRelationTypeRef(abstractRelationTypeRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelPackage.POINTER_RELATION_TYPE_REF: {
-				PointerRelationTypeRef pointerRelationTypeRef = (PointerRelationTypeRef)theEObject;
-				T result = casePointerRelationTypeRef(pointerRelationTypeRef);
-				if (result == null) result = caseAbstractRelationTypeRef(pointerRelationTypeRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ModelPackage.ENTITY_TYPE: {
 				EntityType entityType = (EntityType)theEObject;
 				T result = caseEntityType(entityType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelPackage.ABSTRACT_ENTITY_TYPE_REF: {
-				AbstractEntityTypeRef abstractEntityTypeRef = (AbstractEntityTypeRef)theEObject;
-				T result = caseAbstractEntityTypeRef(abstractEntityTypeRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelPackage.TOP_ENTITY_TYPE_REF: {
-				TopEntityTypeRef topEntityTypeRef = (TopEntityTypeRef)theEObject;
-				T result = caseTopEntityTypeRef(topEntityTypeRef);
-				if (result == null) result = caseAbstractEntityTypeRef(topEntityTypeRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelPackage.POINTER_ENTITY_TYPE_REF: {
-				PointerEntityTypeRef pointerEntityTypeRef = (PointerEntityTypeRef)theEObject;
-				T result = casePointerEntityTypeRef(pointerEntityTypeRef);
-				if (result == null) result = caseAbstractEntityTypeRef(pointerEntityTypeRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -153,26 +107,6 @@ public class ModelSwitch<T> extends Switch<T> {
 				FunctionApplication functionApplication = (FunctionApplication)theEObject;
 				T result = caseFunctionApplication(functionApplication);
 				if (result == null) result = caseSugar(functionApplication);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelPackage.ABSTRACT_DECLARATION_REF: {
-				AbstractDeclarationRef abstractDeclarationRef = (AbstractDeclarationRef)theEObject;
-				T result = caseAbstractDeclarationRef(abstractDeclarationRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelPackage.PRELUDE_DECLARATION_REF: {
-				PreludeDeclarationRef preludeDeclarationRef = (PreludeDeclarationRef)theEObject;
-				T result = casePreludeDeclarationRef(preludeDeclarationRef);
-				if (result == null) result = caseAbstractDeclarationRef(preludeDeclarationRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelPackage.POINTER_DECLARATION_REF: {
-				PointerDeclarationRef pointerDeclarationRef = (PointerDeclarationRef)theEObject;
-				T result = casePointerDeclarationRef(pointerDeclarationRef);
-				if (result == null) result = caseAbstractDeclarationRef(pointerDeclarationRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -192,6 +126,12 @@ public class ModelSwitch<T> extends Switch<T> {
 				Binding binding = (Binding)theEObject;
 				T result = caseBinding(binding);
 				if (result == null) result = caseAbstractPart(binding);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelPackage.DECLARED: {
+				Declared declared = (Declared)theEObject;
+				T result = caseDeclared(declared);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -230,36 +170,6 @@ public class ModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Entity Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Entity Ref</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAbstractEntityRef(AbstractEntityRef object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pointer Entity Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pointer Entity Ref</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePointerEntityRef(PointerEntityRef object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -290,36 +200,6 @@ public class ModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Relation Type Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Relation Type Ref</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAbstractRelationTypeRef(AbstractRelationTypeRef object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pointer Relation Type Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pointer Relation Type Ref</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePointerRelationTypeRef(PointerRelationTypeRef object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Entity Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -331,51 +211,6 @@ public class ModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEntityType(EntityType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Entity Type Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Entity Type Ref</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAbstractEntityTypeRef(AbstractEntityTypeRef object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Top Entity Type Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Top Entity Type Ref</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTopEntityTypeRef(TopEntityTypeRef object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pointer Entity Type Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pointer Entity Type Ref</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePointerEntityTypeRef(PointerEntityTypeRef object) {
 		return null;
 	}
 
@@ -406,51 +241,6 @@ public class ModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFunctionApplication(FunctionApplication object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Declaration Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Declaration Ref</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAbstractDeclarationRef(AbstractDeclarationRef object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Prelude Declaration Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Prelude Declaration Ref</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePreludeDeclarationRef(PreludeDeclarationRef object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pointer Declaration Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pointer Declaration Ref</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePointerDeclarationRef(PointerDeclarationRef object) {
 		return null;
 	}
 
@@ -496,6 +286,21 @@ public class ModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBinding(Binding object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Declared</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Declared</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDeclared(Declared object) {
 		return null;
 	}
 

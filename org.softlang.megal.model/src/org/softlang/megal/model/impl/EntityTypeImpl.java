@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.softlang.megal.model.AbstractEntityTypeRef;
+import org.softlang.megal.model.Declared;
 import org.softlang.megal.model.EntityType;
 import org.softlang.megal.model.ModelPackage;
 
@@ -24,6 +24,7 @@ import org.softlang.megal.model.ModelPackage;
  * <ul>
  *   <li>{@link org.softlang.megal.model.impl.EntityTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.softlang.megal.model.impl.EntityTypeImpl#getSupertype <em>Supertype</em>}</li>
+ *   <li>{@link org.softlang.megal.model.impl.EntityTypeImpl#isIsTop <em>Is Top</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,7 +59,27 @@ public class EntityTypeImpl extends MinimalEObjectImpl.Container implements Enti
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractEntityTypeRef supertype;
+	protected Declared supertype;
+
+	/**
+	 * The default value of the '{@link #isIsTop() <em>Is Top</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsTop()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_TOP_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsTop() <em>Is Top</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsTop()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isTop = IS_TOP_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,7 +126,7 @@ public class EntityTypeImpl extends MinimalEObjectImpl.Container implements Enti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractEntityTypeRef getSupertype() {
+	public Declared getSupertype() {
 		return supertype;
 	}
 
@@ -114,8 +135,8 @@ public class EntityTypeImpl extends MinimalEObjectImpl.Container implements Enti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSupertype(AbstractEntityTypeRef newSupertype, NotificationChain msgs) {
-		AbstractEntityTypeRef oldSupertype = supertype;
+	public NotificationChain basicSetSupertype(Declared newSupertype, NotificationChain msgs) {
+		Declared oldSupertype = supertype;
 		supertype = newSupertype;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelPackage.ENTITY_TYPE__SUPERTYPE, oldSupertype, newSupertype);
@@ -129,7 +150,7 @@ public class EntityTypeImpl extends MinimalEObjectImpl.Container implements Enti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSupertype(AbstractEntityTypeRef newSupertype) {
+	public void setSupertype(Declared newSupertype) {
 		if (newSupertype != supertype) {
 			NotificationChain msgs = null;
 			if (supertype != null)
@@ -141,6 +162,27 @@ public class EntityTypeImpl extends MinimalEObjectImpl.Container implements Enti
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ENTITY_TYPE__SUPERTYPE, newSupertype, newSupertype));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsTop() {
+		return isTop;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsTop(boolean newIsTop) {
+		boolean oldIsTop = isTop;
+		isTop = newIsTop;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ENTITY_TYPE__IS_TOP, oldIsTop, isTop));
 	}
 
 	/**
@@ -169,6 +211,8 @@ public class EntityTypeImpl extends MinimalEObjectImpl.Container implements Enti
 				return getName();
 			case ModelPackage.ENTITY_TYPE__SUPERTYPE:
 				return getSupertype();
+			case ModelPackage.ENTITY_TYPE__IS_TOP:
+				return isIsTop();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,7 +229,10 @@ public class EntityTypeImpl extends MinimalEObjectImpl.Container implements Enti
 				setName((String)newValue);
 				return;
 			case ModelPackage.ENTITY_TYPE__SUPERTYPE:
-				setSupertype((AbstractEntityTypeRef)newValue);
+				setSupertype((Declared)newValue);
+				return;
+			case ModelPackage.ENTITY_TYPE__IS_TOP:
+				setIsTop((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -203,7 +250,10 @@ public class EntityTypeImpl extends MinimalEObjectImpl.Container implements Enti
 				setName(NAME_EDEFAULT);
 				return;
 			case ModelPackage.ENTITY_TYPE__SUPERTYPE:
-				setSupertype((AbstractEntityTypeRef)null);
+				setSupertype((Declared)null);
+				return;
+			case ModelPackage.ENTITY_TYPE__IS_TOP:
+				setIsTop(IS_TOP_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -221,6 +271,8 @@ public class EntityTypeImpl extends MinimalEObjectImpl.Container implements Enti
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ModelPackage.ENTITY_TYPE__SUPERTYPE:
 				return supertype != null;
+			case ModelPackage.ENTITY_TYPE__IS_TOP:
+				return isTop != IS_TOP_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -237,6 +289,8 @@ public class EntityTypeImpl extends MinimalEObjectImpl.Container implements Enti
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", isTop: ");
+		result.append(isTop);
 		result.append(')');
 		return result.toString();
 	}

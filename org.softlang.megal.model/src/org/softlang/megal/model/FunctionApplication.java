@@ -49,55 +49,55 @@ public interface FunctionApplication extends Sugar {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Input</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Input</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Input</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Input</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Input</em>' containment reference.
-	 * @see #setInput(AbstractEntityRef)
+	 * @return the value of the '<em>Input</em>' reference.
+	 * @see #setInput(Entity)
 	 * @see org.softlang.megal.model.ModelPackage#getFunctionApplication_Input()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
-	AbstractEntityRef getInput();
+	Entity getInput();
 
 	/**
-	 * Sets the value of the '{@link org.softlang.megal.model.FunctionApplication#getInput <em>Input</em>}' containment reference.
+	 * Sets the value of the '{@link org.softlang.megal.model.FunctionApplication#getInput <em>Input</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Input</em>' containment reference.
+	 * @param value the new value of the '<em>Input</em>' reference.
 	 * @see #getInput()
 	 * @generated
 	 */
-	void setInput(AbstractEntityRef value);
+	void setInput(Entity value);
 
 	/**
-	 * Returns the value of the '<em><b>Output</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Output</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Output</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Output</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Output</em>' containment reference.
-	 * @see #setOutput(AbstractEntityRef)
+	 * @return the value of the '<em>Output</em>' reference.
+	 * @see #setOutput(Entity)
 	 * @see org.softlang.megal.model.ModelPackage#getFunctionApplication_Output()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
-	AbstractEntityRef getOutput();
+	Entity getOutput();
 
 	/**
-	 * Sets the value of the '{@link org.softlang.megal.model.FunctionApplication#getOutput <em>Output</em>}' containment reference.
+	 * Sets the value of the '{@link org.softlang.megal.model.FunctionApplication#getOutput <em>Output</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Output</em>' containment reference.
+	 * @param value the new value of the '<em>Output</em>' reference.
 	 * @see #getOutput()
 	 * @generated
 	 */
-	void setOutput(AbstractEntityRef value);
+	void setOutput(Entity value);
 
 } // FunctionApplication

@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.softlang.megal.model.AbstractEntityTypeRef;
+import org.softlang.megal.model.Declared;
 import org.softlang.megal.model.ModelPackage;
 import org.softlang.megal.model.RelationType;
 
@@ -59,7 +59,7 @@ public class RelationTypeImpl extends MinimalEObjectImpl.Container implements Re
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractEntityTypeRef fromDomain;
+	protected Declared fromDomain;
 
 	/**
 	 * The cached value of the '{@link #getToDomain() <em>To Domain</em>}' containment reference.
@@ -69,7 +69,7 @@ public class RelationTypeImpl extends MinimalEObjectImpl.Container implements Re
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractEntityTypeRef toDomain;
+	protected Declared toDomain;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,7 +116,7 @@ public class RelationTypeImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractEntityTypeRef getFromDomain() {
+	public Declared getFromDomain() {
 		return fromDomain;
 	}
 
@@ -125,8 +125,8 @@ public class RelationTypeImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetFromDomain(AbstractEntityTypeRef newFromDomain, NotificationChain msgs) {
-		AbstractEntityTypeRef oldFromDomain = fromDomain;
+	public NotificationChain basicSetFromDomain(Declared newFromDomain, NotificationChain msgs) {
+		Declared oldFromDomain = fromDomain;
 		fromDomain = newFromDomain;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelPackage.RELATION_TYPE__FROM_DOMAIN, oldFromDomain, newFromDomain);
@@ -140,7 +140,7 @@ public class RelationTypeImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFromDomain(AbstractEntityTypeRef newFromDomain) {
+	public void setFromDomain(Declared newFromDomain) {
 		if (newFromDomain != fromDomain) {
 			NotificationChain msgs = null;
 			if (fromDomain != null)
@@ -159,7 +159,7 @@ public class RelationTypeImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractEntityTypeRef getToDomain() {
+	public Declared getToDomain() {
 		return toDomain;
 	}
 
@@ -168,8 +168,8 @@ public class RelationTypeImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetToDomain(AbstractEntityTypeRef newToDomain, NotificationChain msgs) {
-		AbstractEntityTypeRef oldToDomain = toDomain;
+	public NotificationChain basicSetToDomain(Declared newToDomain, NotificationChain msgs) {
+		Declared oldToDomain = toDomain;
 		toDomain = newToDomain;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelPackage.RELATION_TYPE__TO_DOMAIN, oldToDomain, newToDomain);
@@ -183,7 +183,7 @@ public class RelationTypeImpl extends MinimalEObjectImpl.Container implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setToDomain(AbstractEntityTypeRef newToDomain) {
+	public void setToDomain(Declared newToDomain) {
 		if (newToDomain != toDomain) {
 			NotificationChain msgs = null;
 			if (toDomain != null)
@@ -243,10 +243,10 @@ public class RelationTypeImpl extends MinimalEObjectImpl.Container implements Re
 				setName((String)newValue);
 				return;
 			case ModelPackage.RELATION_TYPE__FROM_DOMAIN:
-				setFromDomain((AbstractEntityTypeRef)newValue);
+				setFromDomain((Declared)newValue);
 				return;
 			case ModelPackage.RELATION_TYPE__TO_DOMAIN:
-				setToDomain((AbstractEntityTypeRef)newValue);
+				setToDomain((Declared)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -264,10 +264,10 @@ public class RelationTypeImpl extends MinimalEObjectImpl.Container implements Re
 				setName(NAME_EDEFAULT);
 				return;
 			case ModelPackage.RELATION_TYPE__FROM_DOMAIN:
-				setFromDomain((AbstractEntityTypeRef)null);
+				setFromDomain((Declared)null);
 				return;
 			case ModelPackage.RELATION_TYPE__TO_DOMAIN:
-				setToDomain((AbstractEntityTypeRef)null);
+				setToDomain((Declared)null);
 				return;
 		}
 		super.eUnset(featureID);

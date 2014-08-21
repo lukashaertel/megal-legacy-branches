@@ -58,12 +58,12 @@ public interface RelationType extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From Domain</em>' containment reference.
-	 * @see #setFromDomain(AbstractEntityTypeRef)
+	 * @see #setFromDomain(Declared)
 	 * @see org.softlang.megal.model.ModelPackage#getRelationType_FromDomain()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	AbstractEntityTypeRef getFromDomain();
+	Declared getFromDomain();
 
 	/**
 	 * Sets the value of the '{@link org.softlang.megal.model.RelationType#getFromDomain <em>From Domain</em>}' containment reference.
@@ -73,7 +73,7 @@ public interface RelationType extends EObject {
 	 * @see #getFromDomain()
 	 * @generated
 	 */
-	void setFromDomain(AbstractEntityTypeRef value);
+	void setFromDomain(Declared value);
 
 	/**
 	 * Returns the value of the '<em><b>To Domain</b></em>' containment reference.
@@ -84,12 +84,12 @@ public interface RelationType extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>To Domain</em>' containment reference.
-	 * @see #setToDomain(AbstractEntityTypeRef)
+	 * @see #setToDomain(Declared)
 	 * @see org.softlang.megal.model.ModelPackage#getRelationType_ToDomain()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	AbstractEntityTypeRef getToDomain();
+	Declared getToDomain();
 
 	/**
 	 * Sets the value of the '{@link org.softlang.megal.model.RelationType#getToDomain <em>To Domain</em>}' containment reference.
@@ -99,6 +99,6 @@ public interface RelationType extends EObject {
 	 * @see #getToDomain()
 	 * @generated
 	 */
-	void setToDomain(AbstractEntityTypeRef value);
+	void setToDomain(Declared value);
 
 } // RelationType

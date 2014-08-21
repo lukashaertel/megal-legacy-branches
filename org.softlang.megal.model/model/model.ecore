@@ -4,97 +4,119 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="settingDelegates" value="org.eclipse.incquery.querybasedfeature"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Declaration" eSuperTypes="#//AbstractPart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entityTypes" upperBound="-1"
-        eType="#//EntityType" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relationTypes" upperBound="-1"
-        eType="#//RelationType" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
-        eType="#//Relation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
-        eType="#//Entity" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sugar" upperBound="-1"
-        eType="#//Sugar" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="overrideName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Megamodel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eTypeDecls" upperBound="-1"
+        eType="#//ETypeDecl" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rTypeDecls" upperBound="-1"
+        eType="#//RTypeDecl" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rDecls" upperBound="-1"
+        eType="#//RDecl" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eDecls" upperBound="-1"
+        eType="#//EDecl" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
-        eType="#//AbstractDeclarationRef" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Deprectated field for legacy support"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Relation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//AbstractEntityRef"
+        eType="#//Megamodel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedEDecls" upperBound="-1"
+        eType="#//EDecl" changeable="false" volatile="true" transient="true" derived="true"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//AbstractEntityRef"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedRTypeDecls" upperBound="-1"
+        eType="#//RTypeDecl" changeable="false" volatile="true" transient="true" derived="true"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//AbstractRelationTypeRef"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedRDecls" upperBound="-1"
+        eType="#//RDecl" changeable="false" volatile="true" transient="true" derived="true"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedETypeDecls" upperBound="-1"
+        eType="#//ETypeDecl" changeable="false" volatile="true" transient="true" derived="true"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractEntityRef" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PointerEntityRef" eSuperTypes="#//AbstractEntityRef">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refered" lowerBound="1"
-        eType="#//Entity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RDecl" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//EDecl"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//EDecl"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//RTypeDecl"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EDecl" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isParameter" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDependent" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="representativeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//AbstractEntityTypeRef"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="generics" upperBound="-1"
-        eType="#//AbstractEntityRef" containment="true"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="showname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//ETypeRef"
+        changeable="false" volatile="true" transient="true" derived="true" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RelationType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RTypeDecl" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fromDomain" lowerBound="1"
-        eType="#//AbstractEntityTypeRef" containment="true"/>
+        eType="#//ETypeRef" changeable="false" volatile="true" transient="true" derived="true"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toDomain" lowerBound="1"
-        eType="#//AbstractEntityTypeRef" containment="true"/>
+        eType="#//ETypeRef" changeable="false" volatile="true" transient="true" derived="true"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractRelationTypeRef" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PointerRelationTypeRef" eSuperTypes="#//AbstractRelationTypeRef">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refered" lowerBound="1"
-        eType="#//RelationType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ETypeDecl" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="supertype" eType="#//ETypeRef"
+        changeable="false" volatile="true" transient="true" derived="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRoot" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        volatile="true" transient="true" derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EntityType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="supertype" lowerBound="1"
-        eType="#//AbstractEntityTypeRef" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractEntityTypeRef" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMany" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TopEntityTypeRef" eSuperTypes="#//AbstractEntityTypeRef"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PointerEntityTypeRef" eSuperTypes="#//AbstractEntityTypeRef">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refered" lowerBound="1"
-        eType="#//EntityType"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Sugar" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sugar" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionApplication" eSuperTypes="#//Sugar">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="input" lowerBound="1" eType="#//AbstractEntityRef"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="param" lowerBound="1" eType="#//EDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="result" lowerBound="1"
+        eType="#//EDecl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ETypeRef">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMany" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" lowerBound="1"
+        eType="#//ETypeDecl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExETypeDecl" eSuperTypes="#//ETypeDecl">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exIsRoot" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exSupertype" eType="#//ETypeRef"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
-        eType="#//AbstractEntityRef" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractDeclarationRef" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PreludeDeclarationRef" eSuperTypes="#//AbstractDeclarationRef"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PointerDeclarationRef" eSuperTypes="#//AbstractDeclarationRef">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="refered" lowerBound="1"
-        eType="#//Declaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExEDecl" eSuperTypes="#//EDecl">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exIsParameter" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exIsDependent" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exShowname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exType" lowerBound="1"
+        eType="#//ETypeRef" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Megamodel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1"
-        eType="#//AbstractPart" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExRTypeDecl" eSuperTypes="#//RTypeDecl">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exFromDomain" lowerBound="1"
+        eType="#//ETypeRef" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exToDomain" lowerBound="1"
+        eType="#//ETypeRef" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractPart" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Binding" eSuperTypes="#//AbstractPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionEDecl" eSuperTypes="#//EDecl">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exIsParameter" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exIsDependent" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exShowname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

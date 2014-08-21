@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.softlang.megal.model.EntityType#getName <em>Name</em>}</li>
  *   <li>{@link org.softlang.megal.model.EntityType#getSupertype <em>Supertype</em>}</li>
+ *   <li>{@link org.softlang.megal.model.EntityType#isIsTop <em>Is Top</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,12 +58,12 @@ public interface EntityType extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Supertype</em>' containment reference.
-	 * @see #setSupertype(AbstractEntityTypeRef)
+	 * @see #setSupertype(Declared)
 	 * @see org.softlang.megal.model.ModelPackage#getEntityType_Supertype()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	AbstractEntityTypeRef getSupertype();
+	Declared getSupertype();
 
 	/**
 	 * Sets the value of the '{@link org.softlang.megal.model.EntityType#getSupertype <em>Supertype</em>}' containment reference.
@@ -72,6 +73,32 @@ public interface EntityType extends EObject {
 	 * @see #getSupertype()
 	 * @generated
 	 */
-	void setSupertype(AbstractEntityTypeRef value);
+	void setSupertype(Declared value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Top</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Top</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Top</em>' attribute.
+	 * @see #setIsTop(boolean)
+	 * @see org.softlang.megal.model.ModelPackage#getEntityType_IsTop()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isIsTop();
+
+	/**
+	 * Sets the value of the '{@link org.softlang.megal.model.EntityType#isIsTop <em>Is Top</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Top</em>' attribute.
+	 * @see #isIsTop()
+	 * @generated
+	 */
+	void setIsTop(boolean value);
 
 } // EntityType

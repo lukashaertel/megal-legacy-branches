@@ -76,14 +76,6 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 				return createRelationAdapter();
 			}
 			@Override
-			public Adapter caseAbstractEntityRef(AbstractEntityRef object) {
-				return createAbstractEntityRefAdapter();
-			}
-			@Override
-			public Adapter casePointerEntityRef(PointerEntityRef object) {
-				return createPointerEntityRefAdapter();
-			}
-			@Override
 			public Adapter caseEntity(Entity object) {
 				return createEntityAdapter();
 			}
@@ -92,28 +84,8 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 				return createRelationTypeAdapter();
 			}
 			@Override
-			public Adapter caseAbstractRelationTypeRef(AbstractRelationTypeRef object) {
-				return createAbstractRelationTypeRefAdapter();
-			}
-			@Override
-			public Adapter casePointerRelationTypeRef(PointerRelationTypeRef object) {
-				return createPointerRelationTypeRefAdapter();
-			}
-			@Override
 			public Adapter caseEntityType(EntityType object) {
 				return createEntityTypeAdapter();
-			}
-			@Override
-			public Adapter caseAbstractEntityTypeRef(AbstractEntityTypeRef object) {
-				return createAbstractEntityTypeRefAdapter();
-			}
-			@Override
-			public Adapter caseTopEntityTypeRef(TopEntityTypeRef object) {
-				return createTopEntityTypeRefAdapter();
-			}
-			@Override
-			public Adapter casePointerEntityTypeRef(PointerEntityTypeRef object) {
-				return createPointerEntityTypeRefAdapter();
 			}
 			@Override
 			public Adapter caseSugar(Sugar object) {
@@ -122,18 +94,6 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseFunctionApplication(FunctionApplication object) {
 				return createFunctionApplicationAdapter();
-			}
-			@Override
-			public Adapter caseAbstractDeclarationRef(AbstractDeclarationRef object) {
-				return createAbstractDeclarationRefAdapter();
-			}
-			@Override
-			public Adapter casePreludeDeclarationRef(PreludeDeclarationRef object) {
-				return createPreludeDeclarationRefAdapter();
-			}
-			@Override
-			public Adapter casePointerDeclarationRef(PointerDeclarationRef object) {
-				return createPointerDeclarationRefAdapter();
 			}
 			@Override
 			public Adapter caseMegamodel(Megamodel object) {
@@ -146,6 +106,10 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBinding(Binding object) {
 				return createBindingAdapter();
+			}
+			@Override
+			public Adapter caseDeclared(Declared object) {
+				return createDeclaredAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -196,34 +160,6 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.AbstractEntityRef <em>Abstract Entity Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.softlang.megal.model.AbstractEntityRef
-	 * @generated
-	 */
-	public Adapter createAbstractEntityRefAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.PointerEntityRef <em>Pointer Entity Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.softlang.megal.model.PointerEntityRef
-	 * @generated
-	 */
-	public Adapter createPointerEntityRefAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -252,34 +188,6 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.AbstractRelationTypeRef <em>Abstract Relation Type Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.softlang.megal.model.AbstractRelationTypeRef
-	 * @generated
-	 */
-	public Adapter createAbstractRelationTypeRefAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.PointerRelationTypeRef <em>Pointer Relation Type Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.softlang.megal.model.PointerRelationTypeRef
-	 * @generated
-	 */
-	public Adapter createPointerRelationTypeRefAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.EntityType <em>Entity Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -290,48 +198,6 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEntityTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.AbstractEntityTypeRef <em>Abstract Entity Type Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.softlang.megal.model.AbstractEntityTypeRef
-	 * @generated
-	 */
-	public Adapter createAbstractEntityTypeRefAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.TopEntityTypeRef <em>Top Entity Type Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.softlang.megal.model.TopEntityTypeRef
-	 * @generated
-	 */
-	public Adapter createTopEntityTypeRefAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.PointerEntityTypeRef <em>Pointer Entity Type Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.softlang.megal.model.PointerEntityTypeRef
-	 * @generated
-	 */
-	public Adapter createPointerEntityTypeRefAdapter() {
 		return null;
 	}
 
@@ -360,48 +226,6 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFunctionApplicationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.AbstractDeclarationRef <em>Abstract Declaration Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.softlang.megal.model.AbstractDeclarationRef
-	 * @generated
-	 */
-	public Adapter createAbstractDeclarationRefAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.PreludeDeclarationRef <em>Prelude Declaration Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.softlang.megal.model.PreludeDeclarationRef
-	 * @generated
-	 */
-	public Adapter createPreludeDeclarationRefAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.PointerDeclarationRef <em>Pointer Declaration Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.softlang.megal.model.PointerDeclarationRef
-	 * @generated
-	 */
-	public Adapter createPointerDeclarationRefAdapter() {
 		return null;
 	}
 
@@ -444,6 +268,20 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBindingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.softlang.megal.model.Declared <em>Declared</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.softlang.megal.model.Declared
+	 * @generated
+	 */
+	public Adapter createDeclaredAdapter() {
 		return null;
 	}
 

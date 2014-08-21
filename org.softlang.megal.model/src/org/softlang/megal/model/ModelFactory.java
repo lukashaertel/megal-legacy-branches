@@ -40,15 +40,6 @@ public interface ModelFactory extends EFactory {
 	Relation createRelation();
 
 	/**
-	 * Returns a new object of class '<em>Pointer Entity Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pointer Entity Ref</em>'.
-	 * @generated
-	 */
-	PointerEntityRef createPointerEntityRef();
-
-	/**
 	 * Returns a new object of class '<em>Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,15 +58,6 @@ public interface ModelFactory extends EFactory {
 	RelationType createRelationType();
 
 	/**
-	 * Returns a new object of class '<em>Pointer Relation Type Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pointer Relation Type Ref</em>'.
-	 * @generated
-	 */
-	PointerRelationTypeRef createPointerRelationTypeRef();
-
-	/**
 	 * Returns a new object of class '<em>Entity Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,24 +67,6 @@ public interface ModelFactory extends EFactory {
 	EntityType createEntityType();
 
 	/**
-	 * Returns a new object of class '<em>Top Entity Type Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Top Entity Type Ref</em>'.
-	 * @generated
-	 */
-	TopEntityTypeRef createTopEntityTypeRef();
-
-	/**
-	 * Returns a new object of class '<em>Pointer Entity Type Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pointer Entity Type Ref</em>'.
-	 * @generated
-	 */
-	PointerEntityTypeRef createPointerEntityTypeRef();
-
-	/**
 	 * Returns a new object of class '<em>Function Application</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,24 +74,6 @@ public interface ModelFactory extends EFactory {
 	 * @generated
 	 */
 	FunctionApplication createFunctionApplication();
-
-	/**
-	 * Returns a new object of class '<em>Prelude Declaration Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Prelude Declaration Ref</em>'.
-	 * @generated
-	 */
-	PreludeDeclarationRef createPreludeDeclarationRef();
-
-	/**
-	 * Returns a new object of class '<em>Pointer Declaration Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pointer Declaration Ref</em>'.
-	 * @generated
-	 */
-	PointerDeclarationRef createPointerDeclarationRef();
 
 	/**
 	 * Returns a new object of class '<em>Megamodel</em>'.
@@ -146,6 +92,15 @@ public interface ModelFactory extends EFactory {
 	 * @generated
 	 */
 	Binding createBinding();
+
+	/**
+	 * Returns a new object of class '<em>Declared</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Declared</em>'.
+	 * @generated
+	 */
+	Declared createDeclared();
 
 	/**
 	 * Returns the package supported by this factory.

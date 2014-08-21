@@ -7,8 +7,11 @@ import org.eclipse.incquery.runtime.api.IncQueryEngine
 import org.eclipse.xtext.validation.Check
 import org.softlang.megal.model.Declaration
 import org.softlang.megal.model.Entity
-import org.softlang.megal.query.AllEntityTypesMatcher
+import org.softlang.megal.model.EntityType
+import org.softlang.megal.query.InstanceOfMatcher
+import org.softlang.megal.query.AssignableFromMatcher
 
+//import org.softlang.megal.query.SupertypeMatcher
 /**
  * Custom validation rules. 
  *
@@ -19,17 +22,11 @@ class MegaLValidator extends AbstractMegaLValidator {
 	public static val DISCOURAGED_CONFIGURATION = 'discouragedConfiguration'
 
 	@Check
-	def infoStuff(Declaration d) {
-
-		val m = AllEntityTypesMatcher.on(IncQueryEngine.on(d.eResource)).getAllMatches(d, null)
-
-		info('''DET: «m.size»''', null)
-	}
-
-	@Check
-	def infoNameOfDeclaration(Entity e) {
+	def infoInh(Entity e) {
 		val d = e.eContainer as Declaration
-		info('''NOD: «d.name»''', null)
+		val m = InstanceOfMatcher.on(IncQueryEngine.on(d)).getAllValuesOfB(e)
+
+		info('''NOD: «m»''', null)
 	}
 
 //	@Check

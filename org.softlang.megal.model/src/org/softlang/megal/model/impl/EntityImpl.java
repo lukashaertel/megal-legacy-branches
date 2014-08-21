@@ -15,11 +15,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import org.softlang.megal.model.AbstractEntityRef;
-import org.softlang.megal.model.AbstractEntityTypeRef;
+import org.softlang.megal.model.Declared;
 import org.softlang.megal.model.Entity;
 import org.softlang.megal.model.ModelPackage;
 
@@ -130,17 +128,17 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractEntityTypeRef type;
+	protected Declared type;
 
 	/**
-	 * The cached value of the '{@link #getGenerics() <em>Generics</em>}' containment reference list.
+	 * The cached value of the '{@link #getGenerics() <em>Generics</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGenerics()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AbstractEntityRef> generics;
+	protected EList<Entity> generics;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,7 +248,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractEntityTypeRef getType() {
+	public Declared getType() {
 		return type;
 	}
 
@@ -259,8 +257,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetType(AbstractEntityTypeRef newType, NotificationChain msgs) {
-		AbstractEntityTypeRef oldType = type;
+	public NotificationChain basicSetType(Declared newType, NotificationChain msgs) {
+		Declared oldType = type;
 		type = newType;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelPackage.ENTITY__TYPE, oldType, newType);
@@ -274,7 +272,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(AbstractEntityTypeRef newType) {
+	public void setType(Declared newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
 			if (type != null)
@@ -293,9 +291,9 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AbstractEntityRef> getGenerics() {
+	public EList<Entity> getGenerics() {
 		if (generics == null) {
-			generics = new EObjectContainmentEList<AbstractEntityRef>(AbstractEntityRef.class, this, ModelPackage.ENTITY__GENERICS);
+			generics = new EObjectResolvingEList<Entity>(Entity.class, this, ModelPackage.ENTITY__GENERICS);
 		}
 		return generics;
 	}
@@ -310,8 +308,6 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 		switch (featureID) {
 			case ModelPackage.ENTITY__TYPE:
 				return basicSetType(null, msgs);
-			case ModelPackage.ENTITY__GENERICS:
-				return ((InternalEList<?>)getGenerics()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -362,11 +358,11 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 				setRepresentativeName((String)newValue);
 				return;
 			case ModelPackage.ENTITY__TYPE:
-				setType((AbstractEntityTypeRef)newValue);
+				setType((Declared)newValue);
 				return;
 			case ModelPackage.ENTITY__GENERICS:
 				getGenerics().clear();
-				getGenerics().addAll((Collection<? extends AbstractEntityRef>)newValue);
+				getGenerics().addAll((Collection<? extends Entity>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -393,7 +389,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity {
 				setRepresentativeName(REPRESENTATIVE_NAME_EDEFAULT);
 				return;
 			case ModelPackage.ENTITY__TYPE:
-				setType((AbstractEntityTypeRef)null);
+				setType((Declared)null);
 				return;
 			case ModelPackage.ENTITY__GENERICS:
 				getGenerics().clear();
