@@ -18,11 +18,23 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rTypeDecls" upperBound="-1"
-        eType="#//RTypeDecl" changeable="false" volatile="true" transient="true" derived="true"/>
+        eType="#//RTypeDecl" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.softlang.megal.queries.rTypeDecls"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eDecls" upperBound="-1"
-        eType="#//EDecl" changeable="false" volatile="true" transient="true" derived="true"/>
+        eType="#//EDecl" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.softlang.megal.queries.eDecls"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rDecls" upperBound="-1"
-        eType="#//RDecl" changeable="false" volatile="true" transient="true" derived="true"/>
+        eType="#//RDecl" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.softlang.megal.queries.rDecls"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ETypeDecl" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="supertype" eType="#//EType"
@@ -34,7 +46,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="org.eclipse.incquery.querybasedfeature">
-        <details key="patternFQN" value="org.softlang.megal.queries.name"/>
+        <details key="patternFQN" value="org.softlang.megal.queries.name_ETypeDecl"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -44,15 +56,27 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" eType="#//EType"
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" volatile="true" transient="true" derived="true"/>
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.softlang.megal.queries.name_RTypeDecl"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EDecl" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//EType"
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" volatile="true" transient="true" derived="true"/>
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.softlang.megal.queries.name_EDecl"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="showname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" volatile="true" transient="true" derived="true"/>
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.softlang.megal.queries.showname_EDecl"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isParameter" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
         volatile="true" transient="true" derived="true"/>
@@ -70,12 +94,24 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EType" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="def" lowerBound="1" eType="#//ETypeDecl"
-        changeable="false" volatile="true" transient="true" derived="true"/>
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.softlang.megal.queries.def"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="args" upperBound="-1" eType="#//EType"
-        changeable="false" volatile="true" transient="true" derived="true"/>
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.softlang.megal.queries.args"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMany" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
-        volatile="true" transient="true" derived="true"/>
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="org.softlang.megal.queries.isMany"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExETypeDeclGroup" eSuperTypes="#//DeclGroup">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exETypeDecls" lowerBound="1"

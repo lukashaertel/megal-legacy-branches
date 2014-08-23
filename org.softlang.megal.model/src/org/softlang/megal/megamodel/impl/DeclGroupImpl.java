@@ -44,6 +44,34 @@ public abstract class DeclGroupImpl extends MinimalEObjectImpl.Container impleme
 	protected EStructuralFeature.Internal.SettingDelegate ETYPE_DECLS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MegamodelPackage.Literals.DECL_GROUP__ETYPE_DECLS).getSettingDelegate();
 
 	/**
+	 * The cached setting delegate for the '{@link #getRTypeDecls() <em>RType Decls</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRTypeDecls()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate RTYPE_DECLS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MegamodelPackage.Literals.DECL_GROUP__RTYPE_DECLS).getSettingDelegate();
+	/**
+	 * The cached setting delegate for the '{@link #getEDecls() <em>EDecls</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEDecls()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate EDECLS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MegamodelPackage.Literals.DECL_GROUP__EDECLS).getSettingDelegate();
+	/**
+	 * The cached setting delegate for the '{@link #getRDecls() <em>RDecls</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRDecls()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate RDECLS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MegamodelPackage.Literals.DECL_GROUP__RDECLS).getSettingDelegate();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -77,12 +105,9 @@ public abstract class DeclGroupImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<RTypeDecl> getRTypeDecls() {
-		// TODO: implement this method to return the 'RType Decls' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		return (EList<RTypeDecl>)RTYPE_DECLS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -90,12 +115,9 @@ public abstract class DeclGroupImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<EDecl> getEDecls() {
-		// TODO: implement this method to return the 'EDecls' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		return (EList<EDecl>)EDECLS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -103,12 +125,9 @@ public abstract class DeclGroupImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<RDecl> getRDecls() {
-		// TODO: implement this method to return the 'RDecls' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		return (EList<RDecl>)RDECLS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -142,11 +161,11 @@ public abstract class DeclGroupImpl extends MinimalEObjectImpl.Container impleme
 			case MegamodelPackage.DECL_GROUP__ETYPE_DECLS:
 				return ETYPE_DECLS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case MegamodelPackage.DECL_GROUP__RTYPE_DECLS:
-				return !getRTypeDecls().isEmpty();
+				return RTYPE_DECLS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case MegamodelPackage.DECL_GROUP__EDECLS:
-				return !getEDecls().isEmpty();
+				return EDECLS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case MegamodelPackage.DECL_GROUP__RDECLS:
-				return !getRDecls().isEmpty();
+				return RDECLS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

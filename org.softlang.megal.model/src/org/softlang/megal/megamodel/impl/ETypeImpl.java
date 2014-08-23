@@ -3,12 +3,9 @@
 package org.softlang.megal.megamodel.impl;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.softlang.megal.megamodel.EType;
 import org.softlang.megal.megamodel.ETypeDecl;
 import org.softlang.megal.megamodel.MegamodelPackage;
@@ -30,15 +27,32 @@ import org.softlang.megal.megamodel.MegamodelPackage;
  */
 public abstract class ETypeImpl extends MinimalEObjectImpl.Container implements EType {
 	/**
-	 * The default value of the '{@link #isIsMany() <em>Is Many</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getDef() <em>Def</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDef()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate DEF__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MegamodelPackage.Literals.ETYPE__DEF).getSettingDelegate();
+	/**
+	 * The cached setting delegate for the '{@link #getArgs() <em>Args</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getArgs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ARGS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MegamodelPackage.Literals.ETYPE__ARGS).getSettingDelegate();
+	/**
+	 * The cached setting delegate for the '{@link #isIsMany() <em>Is Many</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isIsMany()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_MANY_EDEFAULT = false;
-
+	protected EStructuralFeature.Internal.SettingDelegate IS_MANY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MegamodelPackage.Literals.ETYPE__IS_MANY).getSettingDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,8 +78,7 @@ public abstract class ETypeImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public ETypeDecl getDef() {
-		ETypeDecl def = basicGetDef();
-		return def != null && def.eIsProxy() ? (ETypeDecl)eResolveProxy((InternalEObject)def) : def;
+		return (ETypeDecl)DEF__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -74,10 +87,7 @@ public abstract class ETypeImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public ETypeDecl basicGetDef() {
-		// TODO: implement this method to return the 'Def' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (ETypeDecl)DEF__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -85,12 +95,9 @@ public abstract class ETypeImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<EType> getArgs() {
-		// TODO: implement this method to return the 'Args' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		return (EList<EType>)ARGS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -99,9 +106,7 @@ public abstract class ETypeImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public boolean isIsMany() {
-		// TODO: implement this method to return the 'Is Many' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (Boolean)IS_MANY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -132,11 +137,11 @@ public abstract class ETypeImpl extends MinimalEObjectImpl.Container implements 
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MegamodelPackage.ETYPE__DEF:
-				return basicGetDef() != null;
+				return DEF__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case MegamodelPackage.ETYPE__ARGS:
-				return !getArgs().isEmpty();
+				return ARGS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case MegamodelPackage.ETYPE__IS_MANY:
-				return isIsMany() != IS_MANY_EDEFAULT;
+				return IS_MANY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

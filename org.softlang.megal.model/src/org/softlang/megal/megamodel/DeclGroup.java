@@ -55,6 +55,7 @@ public interface DeclGroup extends EObject {
 	 * @return the value of the '<em>RType Decls</em>' reference list.
 	 * @see org.softlang.megal.megamodel.MegamodelPackage#getDeclGroup_RTypeDecls()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='org.softlang.megal.queries.rTypeDecls'"
 	 * @generated
 	 */
 	EList<RTypeDecl> getRTypeDecls();
@@ -71,6 +72,7 @@ public interface DeclGroup extends EObject {
 	 * @return the value of the '<em>EDecls</em>' reference list.
 	 * @see org.softlang.megal.megamodel.MegamodelPackage#getDeclGroup_EDecls()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='org.softlang.megal.queries.eDecls'"
 	 * @generated
 	 */
 	EList<EDecl> getEDecls();
@@ -87,6 +89,7 @@ public interface DeclGroup extends EObject {
 	 * @return the value of the '<em>RDecls</em>' reference list.
 	 * @see org.softlang.megal.megamodel.MegamodelPackage#getDeclGroup_RDecls()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='org.softlang.megal.queries.rDecls'"
 	 * @generated
 	 */
 	EList<RDecl> getRDecls();

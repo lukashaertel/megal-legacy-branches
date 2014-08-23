@@ -3,6 +3,7 @@
 package org.softlang.megal.megamodel.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -28,15 +29,14 @@ import org.softlang.megal.megamodel.RTypeDecl;
  */
 public abstract class RTypeDeclImpl extends MinimalEObjectImpl.Container implements RTypeDecl {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
-
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MegamodelPackage.Literals.RTYPE_DECL__NAME).getSettingDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,9 +106,7 @@ public abstract class RTypeDeclImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	public String getName() {
-		// TODO: implement this method to return the 'Name' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -144,7 +142,7 @@ public abstract class RTypeDeclImpl extends MinimalEObjectImpl.Container impleme
 			case MegamodelPackage.RTYPE_DECL__RIGHT:
 				return basicGetRight() != null;
 			case MegamodelPackage.RTYPE_DECL__NAME:
-				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

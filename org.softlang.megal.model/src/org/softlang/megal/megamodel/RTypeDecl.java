@@ -64,6 +64,7 @@ public interface RTypeDecl extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see org.softlang.megal.megamodel.MegamodelPackage#getRTypeDecl_Name()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='org.softlang.megal.queries.name_RTypeDecl'"
 	 * @generated
 	 */
 	String getName();

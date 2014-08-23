@@ -51,6 +51,7 @@ public interface EDecl extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see org.softlang.megal.megamodel.MegamodelPackage#getEDecl_Name()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='org.softlang.megal.queries.name_EDecl'"
 	 * @generated
 	 */
 	String getName();
@@ -66,6 +67,7 @@ public interface EDecl extends EObject {
 	 * @return the value of the '<em>Showname</em>' attribute.
 	 * @see org.softlang.megal.megamodel.MegamodelPackage#getEDecl_Showname()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='org.softlang.megal.queries.showname_EDecl'"
 	 * @generated
 	 */
 	String getShowname();

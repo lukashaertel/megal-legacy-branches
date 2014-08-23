@@ -312,15 +312,6 @@ public class MegamodelPackageImpl extends EPackageImpl implements MegamodelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getETypeDecl_Args() {
-		return (EReference)eTypeDeclEClass.getEStructuralFeatures().get(-1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getRTypeDecl() {
 		return rTypeDeclEClass;
 	}
@@ -780,7 +771,6 @@ public class MegamodelPackageImpl extends EPackageImpl implements MegamodelPacka
 		eTypeDeclEClass = createEClass(ETYPE_DECL);
 		createEReference(eTypeDeclEClass, ETYPE_DECL__SUPERTYPE);
 		createEAttribute(eTypeDeclEClass, ETYPE_DECL__NAME);
-		createEReference(eTypeDeclEClass, ETYPE_DECL__ARGS);
 
 		rTypeDeclEClass = createEClass(RTYPE_DECL);
 		createEReference(rTypeDeclEClass, RTYPE_DECL__LEFT);
@@ -895,7 +885,6 @@ public class MegamodelPackageImpl extends EPackageImpl implements MegamodelPacka
 		initEClass(eTypeDeclEClass, ETypeDecl.class, "ETypeDecl", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getETypeDecl_Supertype(), this.getEType(), null, "supertype", null, 0, 1, ETypeDecl.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getETypeDecl_Name(), ecorePackage.getEString(), "name", null, 1, 1, ETypeDecl.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getETypeDecl_Args(), this.getEType(), null, "args", null, 0, -1, ETypeDecl.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(rTypeDeclEClass, RTypeDecl.class, "RTypeDecl", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRTypeDecl_Left(), this.getEType(), null, "left", null, 1, 1, RTypeDecl.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -996,6 +985,72 @@ public class MegamodelPackageImpl extends EPackageImpl implements MegamodelPacka
 		   source, 
 		   new String[] {
 			 "patternFQN", "org.softlang.megal.queries.eTypeDecls"
+		   });	
+		addAnnotation
+		  (getDeclGroup_RTypeDecls(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "org.softlang.megal.queries.rTypeDecls"
+		   });	
+		addAnnotation
+		  (getDeclGroup_EDecls(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "org.softlang.megal.queries.eDecls"
+		   });	
+		addAnnotation
+		  (getDeclGroup_RDecls(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "org.softlang.megal.queries.rDecls"
+		   });	
+		addAnnotation
+		  (getETypeDecl_Supertype(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "org.softlang.megal.queries.supertype"
+		   });	
+		addAnnotation
+		  (getETypeDecl_Name(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "org.softlang.megal.queries.name_ETypeDecl"
+		   });	
+		addAnnotation
+		  (getRTypeDecl_Name(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "org.softlang.megal.queries.name_RTypeDecl"
+		   });	
+		addAnnotation
+		  (getEDecl_Name(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "org.softlang.megal.queries.name_EDecl"
+		   });	
+		addAnnotation
+		  (getEDecl_Showname(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "org.softlang.megal.queries.showname_EDecl"
+		   });	
+		addAnnotation
+		  (getEType_Def(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "org.softlang.megal.queries.def"
+		   });	
+		addAnnotation
+		  (getEType_Args(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "org.softlang.megal.queries.args"
+		   });	
+		addAnnotation
+		  (getEType_IsMany(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "org.softlang.megal.queries.isMany"
 		   });
 	}
 

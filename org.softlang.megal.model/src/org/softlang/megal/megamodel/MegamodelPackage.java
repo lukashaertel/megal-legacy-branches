@@ -196,22 +196,13 @@ public interface MegamodelPackage extends EPackage {
 	int ETYPE_DECL__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Args</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ETYPE_DECL__ARGS = 2;
-
-	/**
 	 * The number of structural features of the '<em>EType Decl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ETYPE_DECL_FEATURE_COUNT = 3;
+	int ETYPE_DECL_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>EType Decl</em>' class.
@@ -560,15 +551,6 @@ public interface MegamodelPackage extends EPackage {
 	 * @ordered
 	 */
 	int EX_ETYPE_DECL__NAME = ETYPE_DECL__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Args</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EX_ETYPE_DECL__ARGS = ETYPE_DECL__ARGS;
 
 	/**
 	 * The feature id for the '<em><b>Ex Supertype</b></em>' containment reference.
@@ -1309,17 +1291,6 @@ public interface MegamodelPackage extends EPackage {
 	EAttribute getETypeDecl_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.softlang.megal.megamodel.ETypeDecl#getArgs <em>Args</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Args</em>'.
-	 * @see org.softlang.megal.megamodel.ETypeDecl#getArgs()
-	 * @see #getETypeDecl()
-	 * @generated
-	 */
-	EReference getETypeDecl_Args();
-
-	/**
 	 * Returns the meta object for class '{@link org.softlang.megal.megamodel.RTypeDecl <em>RType Decl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1939,14 +1910,6 @@ public interface MegamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ETYPE_DECL__NAME = eINSTANCE.getETypeDecl_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Args</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ETYPE_DECL__ARGS = eINSTANCE.getETypeDecl_Args();
 
 		/**
 		 * The meta object literal for the '{@link org.softlang.megal.megamodel.impl.RTypeDeclImpl <em>RType Decl</em>}' class.

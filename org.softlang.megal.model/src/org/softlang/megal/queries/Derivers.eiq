@@ -1,21 +1,9 @@
 package org.softlang.megal.queries
 
 import "http://softlang.org/megamodel"
+import "http://www.eclipse.org/emf/2002/Ecore"
 
-/**
- * <p>Derives the name feature of an entity type declaration</p>
- * <p>For an explicit entity type declaration, map to the explicit name</p>
- */
-@QueryBasedFeature
-pattern name(A : ETypeDecl, B) = {
-	ExETypeDecl(A);
-	ExETypeDecl.exName(A, B);
-}
-
-/**
- * <p>Derives the entity type declarations feature of a declaration group</p>
- * <p>For an explicit entity type declaration group, map to the single declaration</p>
- */
+// Overloads for declaration groups
 @QueryBasedFeature
 pattern eTypeDecls(A : DeclGroup, B : ETypeDecl) = {
 	ExETypeDeclGroup(A);
@@ -23,7 +11,72 @@ pattern eTypeDecls(A : DeclGroup, B : ETypeDecl) = {
 }
 
 @QueryBasedFeature
+pattern rTypeDecls(A : DeclGroup, B : RTypeDecl) = {
+	ExRTypeDeclGroup(A);
+	ExRTypeDeclGroup.exRTypeDecls(A, B);
+}
+
+@QueryBasedFeature
+pattern eDecls(A : DeclGroup, B : EDecl) = {
+	ExEDeclGroup(A);
+	ExEDeclGroup.exEDecls(A, B);
+}
+
+@QueryBasedFeature
+pattern rDecls(A : DeclGroup, B : RDecl) = {
+	ExRDeclGroup(A);
+	ExRDeclGroup.exRDecls(A, B);
+}
+
+// Implementation of features for explicit objects
+@QueryBasedFeature(feature = "name")
+pattern name_ETypeDecl(A : ETypeDecl, B) = {
+	ExETypeDecl(A);
+	ExETypeDecl.exName(A, B);
+}
+
+@QueryBasedFeature(feature = "name")
+pattern name_RTypeDecl(A : RTypeDecl, B) = {
+	ExRTypeDecl(A);
+	ExRTypeDecl.exName(A, B);
+}
+
+@QueryBasedFeature(feature = "name")
+pattern name_EDecl(A : EDecl, B) = {
+	ExEDecl(A);
+	ExEDecl.exName(A, B);
+}
+
+@QueryBasedFeature(feature = "showname")
+pattern showname_EDecl(A : EDecl, B) = {
+	ExEDecl(A);
+	ExEDecl.exShowname(A, B);
+}
+
+@QueryBasedFeature
 pattern supertype(A : ETypeDecl, B : EType) = {
 	ExETypeDecl(A);
 	ExETypeDecl.exSupertype(A, B);
+}
+
+//@QueryBasedFeatrue
+//pattern args(A : ETypeDecl, B: EType) = {
+//	
+//}
+@QueryBasedFeature
+pattern def(A : EType, B : ETypeDecl) = {
+	ExEType(A);
+	ExEType.exDef(A, B);
+}
+
+@QueryBasedFeature
+pattern args(A : EType, B : EType) = {
+	ExEType(A);
+	ExEType.exArgs(A, B);
+}
+
+@QueryBasedFeature
+pattern isMany(A : EType, B: EBoolean) = {
+	ExEType(A);
+	ExEType.exIsMany(A, B);
 }

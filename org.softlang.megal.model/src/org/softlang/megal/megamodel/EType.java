@@ -36,6 +36,7 @@ public interface EType extends EObject {
 	 * @return the value of the '<em>Def</em>' reference.
 	 * @see org.softlang.megal.megamodel.MegamodelPackage#getEType_Def()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='org.softlang.megal.queries.def'"
 	 * @generated
 	 */
 	ETypeDecl getDef();
@@ -52,6 +53,7 @@ public interface EType extends EObject {
 	 * @return the value of the '<em>Args</em>' reference list.
 	 * @see org.softlang.megal.megamodel.MegamodelPackage#getEType_Args()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='org.softlang.megal.queries.args'"
 	 * @generated
 	 */
 	EList<EType> getArgs();
@@ -67,6 +69,7 @@ public interface EType extends EObject {
 	 * @return the value of the '<em>Is Many</em>' attribute.
 	 * @see org.softlang.megal.megamodel.MegamodelPackage#getEType_IsMany()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='org.softlang.megal.queries.isMany'"
 	 * @generated
 	 */
 	boolean isIsMany();

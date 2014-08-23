@@ -3,6 +3,7 @@
 package org.softlang.megal.megamodel.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -30,24 +31,24 @@ import org.softlang.megal.megamodel.MegamodelPackage;
  */
 public abstract class EDeclImpl extends MinimalEObjectImpl.Container implements EDecl {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MegamodelPackage.Literals.EDECL__NAME).getSettingDelegate();
 
 	/**
-	 * The default value of the '{@link #getShowname() <em>Showname</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getShowname() <em>Showname</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getShowname()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SHOWNAME_EDEFAULT = null;
+	protected EStructuralFeature.Internal.SettingDelegate SHOWNAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MegamodelPackage.Literals.EDECL__SHOWNAME).getSettingDelegate();
 
 	/**
 	 * The default value of the '{@link #isIsParameter() <em>Is Parameter</em>}' attribute.
@@ -116,9 +117,7 @@ public abstract class EDeclImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public String getName() {
-		// TODO: implement this method to return the 'Name' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -127,9 +126,7 @@ public abstract class EDeclImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public String getShowname() {
-		// TODO: implement this method to return the 'Showname' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (String)SHOWNAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -188,9 +185,9 @@ public abstract class EDeclImpl extends MinimalEObjectImpl.Container implements 
 			case MegamodelPackage.EDECL__TYPE:
 				return basicGetType() != null;
 			case MegamodelPackage.EDECL__NAME:
-				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case MegamodelPackage.EDECL__SHOWNAME:
-				return SHOWNAME_EDEFAULT == null ? getShowname() != null : !SHOWNAME_EDEFAULT.equals(getShowname());
+				return SHOWNAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case MegamodelPackage.EDECL__IS_PARAMETER:
 				return isIsParameter() != IS_PARAMETER_EDEFAULT;
 			case MegamodelPackage.EDECL__IS_DEPENDENT:
