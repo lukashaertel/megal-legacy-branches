@@ -1,82 +1,18 @@
 package org.softlang.megal.queries
 
-import "http://softlang.org/megamodel"
 import "http://www.eclipse.org/emf/2002/Ecore"
+import "http://softlang.org/megamodel"
 
-// Overloads for declaration groups
-@QueryBasedFeature
-pattern eTypeDecls(A : DeclGroup, B : ETypeDecl) = {
-	ExETypeDeclGroup(A);
-	ExETypeDeclGroup.exETypeDecls(A, B);
+/**
+ * Is root, if no supertype can be found
+ */
+pattern root(A : ETypeDecl) = {
+	neg find supertype(A, _);
 }
 
-@QueryBasedFeature
-pattern rTypeDecls(A : DeclGroup, B : RTypeDecl) = {
-	ExRTypeDeclGroup(A);
-	ExRTypeDeclGroup.exRTypeDecls(A, B);
-}
-
-@QueryBasedFeature
-pattern eDecls(A : DeclGroup, B : EDecl) = {
-	ExEDeclGroup(A);
-	ExEDeclGroup.exEDecls(A, B);
-}
-
-@QueryBasedFeature
-pattern rDecls(A : DeclGroup, B : RDecl) = {
-	ExRDeclGroup(A);
-	ExRDeclGroup.exRDecls(A, B);
-}
-
-// Implementation of features for explicit objects
-@QueryBasedFeature(feature = "name")
-pattern name_ETypeDecl(A : ETypeDecl, B) = {
-	ExETypeDecl(A);
-	ExETypeDecl.exName(A, B);
-}
-
-@QueryBasedFeature(feature = "name")
-pattern name_RTypeDecl(A : RTypeDecl, B) = {
-	ExRTypeDecl(A);
-	ExRTypeDecl.exName(A, B);
-}
-
-@QueryBasedFeature(feature = "name")
-pattern name_EDecl(A : EDecl, B) = {
-	ExEDecl(A);
-	ExEDecl.exName(A, B);
-}
-
-@QueryBasedFeature(feature = "showname")
-pattern showname_EDecl(A : EDecl, B) = {
-	ExEDecl(A);
-	ExEDecl.exShowname(A, B);
-}
-
-@QueryBasedFeature
-pattern supertype(A : ETypeDecl, B : EType) = {
-	ExETypeDecl(A);
-	ExETypeDecl.exSupertype(A, B);
-}
-
-//@QueryBasedFeatrue
-//pattern args(A : ETypeDecl, B: EType) = {
-//	
-//}
-@QueryBasedFeature
-pattern def(A : EType, B : ETypeDecl) = {
-	ExEType(A);
-	ExEType.exDef(A, B);
-}
-
-@QueryBasedFeature
-pattern args(A : EType, B : EType) = {
-	ExEType(A);
-	ExEType.exArgs(A, B);
-}
-
-@QueryBasedFeature
-pattern isMany(A : EType, B: EBoolean) = {
-	ExEType(A);
-	ExEType.exIsMany(A, B);
+/**
+ * Mapped to the entity type declarations supertype relation
+ */
+pattern supertype(A : ETypeDecl, B) = {
+	ETypeDecl.supertype(A, B);
 }

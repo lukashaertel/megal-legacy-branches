@@ -6,9 +6,9 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: org.softlang.megal.megamodel,
- org.softlang.megal.megamodel.impl,
- org.softlang.megal.megamodel.util,
+Export-Package: org.softlang.megal.model,
+ org.softlang.megal.model.impl,
+ org.softlang.megal.model.util,
  org.softlang.megal.queries,
  org.softlang.megal.queries.util
 Require-Bundle: org.eclipse.core.runtime,

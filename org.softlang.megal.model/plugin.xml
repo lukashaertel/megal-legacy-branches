@@ -1,46 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><?eclipse version="3.0"?><!--
 --><plugin>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated megamodel -->
-    <package class="org.softlang.megal.megamodel.MegamodelPackage" genModel="model/megamodel.genmodel" uri="http://softlang.org/megamodel"/>
-  </extension>
   <extension id="org.softlang.megal.queries.Derivers" point="org.eclipse.incquery.runtime.queryspecification">
     <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:org.softlang.megal.queries.Derivers" id="org.softlang.megal.queries.Derivers"/>
   </extension>
-  <extension id="extension.derived.org.softlang.megal.queries.eDecls" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="DeclGroup" feature-name="eDecls" package-nsUri="http://softlang.org/megamodel"/>
-  </extension>
-  <extension id="extension.derived.org.softlang.megal.queries.rDecls" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="DeclGroup" feature-name="rDecls" package-nsUri="http://softlang.org/megamodel"/>
-  </extension>
-  <extension id="extension.derived.org.softlang.megal.queries.args" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="EType" feature-name="args" package-nsUri="http://softlang.org/megamodel"/>
-  </extension>
-  <extension id="extension.derived.org.softlang.megal.queries.name_RTypeDecl" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="RTypeDecl" feature-name="name" package-nsUri="http://softlang.org/megamodel"/>
-  </extension>
-  <extension id="extension.derived.org.softlang.megal.queries.eTypeDecls" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="DeclGroup" feature-name="eTypeDecls" package-nsUri="http://softlang.org/megamodel"/>
-  </extension>
-  <extension id="extension.derived.org.softlang.megal.queries.rTypeDecls" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="DeclGroup" feature-name="rTypeDecls" package-nsUri="http://softlang.org/megamodel"/>
-  </extension>
-  <extension id="extension.derived.org.softlang.megal.queries.name_ETypeDecl" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="ETypeDecl" feature-name="name" package-nsUri="http://softlang.org/megamodel"/>
-  </extension>
-  <extension id="extension.derived.org.softlang.megal.queries.supertype" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="ETypeDecl" feature-name="supertype" package-nsUri="http://softlang.org/megamodel"/>
-  </extension>
-  <extension id="extension.derived.org.softlang.megal.queries.isMany" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="EType" feature-name="isMany" package-nsUri="http://softlang.org/megamodel"/>
-  </extension>
-  <extension id="extension.derived.org.softlang.megal.queries.def" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="EType" feature-name="def" package-nsUri="http://softlang.org/megamodel"/>
-  </extension>
-  <extension id="extension.derived.org.softlang.megal.queries.name_EDecl" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="EDecl" feature-name="name" package-nsUri="http://softlang.org/megamodel"/>
-  </extension>
-  <extension id="extension.derived.org.softlang.megal.queries.showname_EDecl" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
-    <wellbehaving-derived-feature classifier-name="EDecl" feature-name="showname" package-nsUri="http://softlang.org/megamodel"/>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated megamodel -->
+    <package class="org.softlang.megal.model.MegalPackage" genModel="model/megamodel.genmodel" uri="http://softlang.org/megamodel"/>
   </extension>
 </plugin>

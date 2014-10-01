@@ -3,13 +3,7 @@
  */
 package org.softlang.megal.validation
 
-import org.eclipse.incquery.runtime.api.IncQueryEngine
 import org.eclipse.xtext.validation.Check
-import org.softlang.megal.model.Declaration
-import org.softlang.megal.model.Entity
-import org.softlang.megal.model.EntityType
-import org.softlang.megal.query.InstanceOfMatcher
-import org.softlang.megal.query.AssignableFromMatcher
 
 //import org.softlang.megal.query.SupertypeMatcher
 /**
@@ -21,13 +15,13 @@ class MegaLValidator extends AbstractMegaLValidator {
 
 	public static val DISCOURAGED_CONFIGURATION = 'discouragedConfiguration'
 
-	@Check
-	def infoInh(Entity e) {
-		val d = e.eContainer as Declaration
-		val m = InstanceOfMatcher.on(IncQueryEngine.on(d)).getAllValuesOfB(e)
-
-		info('''NOD: «m»''', null)
-	}
+//	@Check
+//	def infoInh(Entity e) {
+//		val d = e.eContainer as Declaration
+//		val m = InstanceOfMatcher.on(IncQueryEngine.on(d)).getAllValuesOfB(e)
+//
+//		info('''NOD: «m»''', null)
+//	}
 
 //	@Check
 //	def discourageConfiguration(Dec model) {
