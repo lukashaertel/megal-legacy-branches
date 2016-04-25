@@ -156,8 +156,8 @@ build/
 !**/src/**/build/
 !**/xtend-gen/**/build/
 
-/src-gen/*
-!/src-gen
-/Xtend-gen/*
-!/xtend-gen
+**/src-gen/*
+!**/src-gen
+**/Xtend-gen/*
+!**/xtend-gen
 
