@@ -1,9 +1,10 @@
-grammar org.softlang.megal.Megamodel with org.eclipse.xtext.common.Terminals
+grammar org.softlang.megal.Megamodel with org.eclipse.xtext.xbase.Xbase
 
+import "http://www.eclipse.org/xtext/common/JavaVMTypes"
 generate megamodel "http://www.softlang.org/megal/Megamodel"
 
 Model:
 	greetings+=Greeting*;
-	
+
 Greeting:
-	'Hello' name=ID '!';
+	'Hello' type=JvmTypeReference '!';
