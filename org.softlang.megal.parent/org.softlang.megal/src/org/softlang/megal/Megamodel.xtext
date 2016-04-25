@@ -1,0 +1,9 @@
+grammar org.softlang.megal.Megamodel with org.eclipse.xtext.common.Terminals
+
+generate megamodel "http://www.softlang.org/megal/Megamodel"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

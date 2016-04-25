@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.softlang.megal
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.softlang.megal; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.softlang.megal.services,
+ org.softlang.megal,
+ org.softlang.megal.generator,
+ org.softlang.megal.megamodel,
+ org.softlang.megal.serializer,
+ org.softlang.megal.parser.antlr,
+ org.softlang.megal.megamodel.impl,
+ org.softlang.megal.megamodel.util,
+ org.softlang.megal.parser.antlr.internal,
+ org.softlang.megal.scoping,
+ org.softlang.megal.validation
+Import-Package: org.apache.log4j
