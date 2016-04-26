@@ -1,1 +1,17 @@
-Hello java.lang.String!
+
+javaFiles: File(+)
+javaFiles elementOf JAXB.Java
+
+Pair(xsdFiles, javaFiles) in JAXB.Generator, evidenceIn 'workspace:/org.softlang.megal.examples/build.xml'
+
+xsdFiles = 'workspace:/org.softlang.megal.examples/inputs/Company.xsd_file'
+javaFiles = 'workspace:/org.softlang.megal.examples/src/org/softlang/company/xjc/'
+
+aLanguage: Language xsdFiles defines aLanguage
+javaFiles defines aLanguage
+
+aLanguage = 'http://www.company.softlang.org/company.xsd'
+
+xsdFiles correspondsTo javaFiles
+
+elementOf < Relation(Pair, Function), evaluatedBy FindBuildScriptAsElementOfEvidence

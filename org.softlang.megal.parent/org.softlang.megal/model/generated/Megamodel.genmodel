@@ -7,10 +7,24 @@
   <genPackages prefix="Megamodel" basePackage="org.softlang.megal" disposableProviderFactory="true"
       fileExtensions="megal" ecorePackage="Megamodel.ecore#/">
     <genClasses ecoreClass="Megamodel.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Model/greetings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Model/elements"/>
     </genClasses>
-    <genClasses ecoreClass="Megamodel.ecore#//Greeting">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Greeting/type"/>
+    <genClasses ecoreClass="Megamodel.ecore#//Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Statement/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Statement/via"/>
+    </genClasses>
+    <genClasses ecoreClass="Megamodel.ecore#//Via">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Via/predicate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Via/to"/>
+    </genClasses>
+    <genClasses ecoreClass="Megamodel.ecore#//Exp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Exp/par"/>
+    </genClasses>
+    <genClasses ecoreClass="Megamodel.ecore#//TypeExp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//TypeExp/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Megamodel.ecore#//SymExp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Megamodel.ecore#//SymExp/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

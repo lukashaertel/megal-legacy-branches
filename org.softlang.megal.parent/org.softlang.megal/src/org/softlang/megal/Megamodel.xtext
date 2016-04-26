@@ -4,7 +4,17 @@ import "http://www.eclipse.org/xtext/common/JavaVMTypes"
 generate megamodel "http://www.softlang.org/megal/Megamodel"
 
 Model:
-	greetings+=Greeting*;
+	elements+=Statement*;
 
-Greeting:
-	'Hello' type=JvmTypeReference '!';
+Statement:
+	from=Exp via+=Via (',' via+=Via)*;
+
+Via:
+	predicate=Exp to=Exp;
+
+Exp returns Exp:
+	({TypeExp} 'jvm' '(' type=JvmTypeReference ')' | {SymExp} value=Symbol) ('(' (par+=Exp (',' par+=Exp)*)? ')')?;
+
+Symbol:
+	QualifiedName | Number | STRING | ':' | '=' | '->' | '<-' | ':->' | '<-:' | '+' | '-' | '*' | '/' | '>' | '>=' | '=='
+	| '!=' | '<=' | '<'; 
