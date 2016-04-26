@@ -6,25 +6,60 @@
     complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.11" usedGenPackages="platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types">
   <genPackages prefix="Megamodel" basePackage="org.softlang.megal" disposableProviderFactory="true"
       fileExtensions="megal" ecorePackage="Megamodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Megamodel.ecore#//Symbol">
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/COLON"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/ASSING"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/IMPLIES"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/LEFT_IMPLIES"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/MAPPEDTO"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/LEFT_MAPPEDTO"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/PLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/MINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/TIMES"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/DIVIDED"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/SETMINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/GREATER"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/GREATER_EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/NOT_EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/LESS_EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="Megamodel.ecore#//Symbol/LESS"/>
+    </genEnums>
     <genClasses ecoreClass="Megamodel.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Model/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Model/items"/>
     </genClasses>
-    <genClasses ecoreClass="Megamodel.ecore#//Statement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Statement/from"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Statement/via"/>
+    <genClasses ecoreClass="Megamodel.ecore#//Fact">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Fact/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Fact/predicate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Fact/to"/>
     </genClasses>
-    <genClasses ecoreClass="Megamodel.ecore#//Via">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Via/predicate"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Via/to"/>
+    <genClasses ecoreClass="Megamodel.ecore#//Exp"/>
+    <genClasses ecoreClass="Megamodel.ecore#//Par">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Par/on"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Par/items"/>
     </genClasses>
-    <genClasses ecoreClass="Megamodel.ecore#//Exp">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Exp/par"/>
+    <genClasses ecoreClass="Megamodel.ecore#//Facts">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Facts/facts"/>
     </genClasses>
-    <genClasses ecoreClass="Megamodel.ecore#//TypeExp">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//TypeExp/type"/>
+    <genClasses ecoreClass="Megamodel.ecore#//Seq">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Seq/items"/>
     </genClasses>
-    <genClasses ecoreClass="Megamodel.ecore#//SymExp">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Megamodel.ecore#//SymExp/value"/>
+    <genClasses ecoreClass="Megamodel.ecore#//Type">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Megamodel.ecore#//Type/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Megamodel.ecore#//Name">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Megamodel.ecore#//Name/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Megamodel.ecore#//Text">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Megamodel.ecore#//Text/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Megamodel.ecore#//Number">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Megamodel.ecore#//Number/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Megamodel.ecore#//Op">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Megamodel.ecore#//Op/op"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

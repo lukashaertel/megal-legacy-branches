@@ -1,20 +1,66 @@
-grammar org.softlang.megal.Megamodel with org.eclipse.xtext.xbase.Xbase
+grammar org.softlang.megal.Megamodel with org.eclipse.xtext.xbase.Xtype
 
 import "http://www.eclipse.org/xtext/common/JavaVMTypes"
+import "http://www.eclipse.org/emf/2002/Ecore"
 generate megamodel "http://www.softlang.org/megal/Megamodel"
 
+/**
+ * A model is basically a list of facts
+ */
 Model:
-	elements+=Statement*;
+	items+=Fact*;
 
-Statement:
-	from=Exp via+=Via (',' via+=Via)*;
+	/**
+	 * A statement connects three parameterized instances
+	 */
+Fact:
+	from+=Exp (',' from+=Exp)* predicate=Exp to+=Exp (',' to+=Exp)*;
 
-Via:
-	predicate=Exp to=Exp;
-
+	/**
+	 * A parameterized instance is a terminal that has arguments
+	 */
 Exp returns Exp:
-	({TypeExp} 'jvm' '(' type=JvmTypeReference ')' | {SymExp} value=Symbol) ('(' (par+=Exp (',' par+=Exp)*)? ')')?;
+	Term ({Par.on=current} '(' (items+=Exp (',' items+=Exp)*)? ')')*;
 
-Symbol:
-	QualifiedName | Number | STRING | ':' | '=' | '->' | '<-' | ':->' | '<-:' | '+' | '-' | '*' | '/' | '>' | '>=' | '=='
-	| '!=' | '<=' | '<'; 
+	/**
+	 * The intrinsics or terminals:
+	 * - A list of facts
+	 * - A list of items
+	 * - A type reference
+	 * - Symbols and names
+	 */
+Term returns Exp:
+	{Facts} '{' facts+=Fact* '}'
+	| {Seq} '[' (items+=Exp (',' items+=Exp)*)? ']'
+	| {Type} 'jvm' '(' type=JvmTypeReference ')'
+	| {Name} name=QualifiedName
+	| {Text} value=STRING
+	| {Number} value=INT
+	| {Op} op=Symbol;
+
+	/**
+	 * Symbols that may be overloaded
+	 */
+enum Symbol:
+	COLON=':'
+	| ASSING='='
+	| IMPLIES='->'
+	| LEFT_IMPLIES='<-'
+	| MAPPEDTO=':->'
+	| LEFT_MAPPEDTO='<-:'
+	| PLUS='+'
+	| MINUS='-'
+	| TIMES='*'
+	| DIVIDED='/'
+	| AND='&&'
+	| OR='||'
+	| SETMINUS='\\'
+	| GREATER='>'
+	| GREATER_EQUALS='>='
+	| EQUALS='=='
+	| NOT_EQUALS='!='
+	| LESS_EQUALS='<='
+	| LESS='<';
+
+terminal INT returns EInt:
+	'1'..'9' '0'..'9'*;

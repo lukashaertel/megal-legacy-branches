@@ -1,17 +1,44 @@
+model(Prelude) = {
+	// Happy bootstrapping
+	: <{Any * Any}
+	< <{Type * Type}
+	
+	// Basic types
+	Artifact < Any
+	File < Artifact
+	Set < Any
+	Language < Set
 
-javaFiles: File(+)
-javaFiles elementOf JAXB.Java
+	// Ey b0ss can I habe the error pls?
+	1 = 2
+	
+	// Relationships
+	elementOf <{Artifact * Language}
+	subsetOf <{Set * Set}
+	
+	// Properties of  some other file are carried, while creation is replaced
+	{someFile as someOtherFile} in {
+		someOtherFile = function(someFile)
+		someOtherFile correspondsTo someFile
+	}
 
-Pair(xsdFiles, javaFiles) in JAXB.Generator, evidenceIn 'workspace:/org.softlang.megal.examples/build.xml'
+	// Plug reasoning
+	reasoning <- {
+		// X is anything and 'instance' of a language, so declare
+		// it to be instance of a file and element of the language
 
-xsdFiles = 'workspace:/org.softlang.megal.examples/inputs/Company.xsd_file'
-javaFiles = 'workspace:/org.softlang.megal.examples/src/org/softlang/company/xjc/'
-
-aLanguage: Language xsdFiles defines aLanguage
-javaFiles defines aLanguage
-
-aLanguage = 'http://www.company.softlang.org/company.xsd'
-
-xsdFiles correspondsTo javaFiles
-
-elementOf < Relation(Pair, Function), evaluatedBy FindBuildScriptAsElementOfEvidence
+		// Open variables quantify
+		X: Any
+		Y: Language
+		
+		// Mapping of antecedent to conclusion
+		{X : Y} :-> {X : File X elementOf Y}
+	}, {
+		// X is a file and element of a language that is in turn
+		// a subset, so infer new element relationship
+		X: File
+		Y: Language
+		Y: Language
+		{{X elementOf Y} && {Y subsetOf Z}} :-> {X elementOf Z}
+	}
+}
