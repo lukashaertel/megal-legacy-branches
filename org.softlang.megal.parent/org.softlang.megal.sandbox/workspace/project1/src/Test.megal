@@ -17,11 +17,11 @@ model(Prelude) = {
 	subsetOf <{Set * Set}
 	
 	// Properties of  some other file are carried, while creation is replaced
-	{someFile as someOtherFile} in {
+	with {someFile as someOtherFile} {
 		someOtherFile = function(someFile)
 		someOtherFile correspondsTo someFile
 	}
-
+	
 	// Plug reasoning
 	reasoning <- {
 		// X is anything and 'instance' of a language, so declare
@@ -39,6 +39,6 @@ model(Prelude) = {
 		X: File
 		Y: Language
 		Y: Language
-		{{X elementOf Y} && {Y subsetOf Z}} :-> {X elementOf Z}
+		{X elementOf Y Y subsetOf Z} :-> {X elementOf Z}
 	}
 }

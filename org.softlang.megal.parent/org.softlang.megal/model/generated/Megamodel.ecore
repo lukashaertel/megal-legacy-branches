@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="megamodel" nsURI="http://www.softlang.org/megal/Megamodel" nsPrefix="megamodel">
-  <eClassifiers xsi:type="ecore:EClass" name="Model">
+  <eClassifiers xsi:type="ecore:EClass" name="Facts" eSuperTypes="#//Exp">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
         eType="#//Fact" containment="true"/>
   </eClassifiers>
@@ -16,35 +16,34 @@
   <eClassifiers xsi:type="ecore:EClass" name="Exp"/>
   <eClassifiers xsi:type="ecore:EEnum" name="Symbol">
     <eLiterals name="COLON" literal=":"/>
-    <eLiterals name="ASSING" value="1" literal="="/>
-    <eLiterals name="IMPLIES" value="2" literal="->"/>
-    <eLiterals name="LEFT_IMPLIES" value="3" literal="&lt;-"/>
-    <eLiterals name="MAPPEDTO" value="4" literal=":->"/>
-    <eLiterals name="LEFT_MAPPEDTO" value="5" literal="&lt;-:"/>
-    <eLiterals name="PLUS" value="6" literal="+"/>
-    <eLiterals name="MINUS" value="7" literal="-"/>
-    <eLiterals name="TIMES" value="8" literal="*"/>
-    <eLiterals name="DIVIDED" value="9" literal="/"/>
-    <eLiterals name="AND" value="10" literal="&amp;&amp;"/>
-    <eLiterals name="OR" value="11" literal="||"/>
-    <eLiterals name="SETMINUS" value="12" literal="\"/>
-    <eLiterals name="GREATER" value="13" literal=">"/>
-    <eLiterals name="GREATER_EQUALS" value="14" literal=">="/>
-    <eLiterals name="EQUALS" value="15" literal="=="/>
-    <eLiterals name="NOT_EQUALS" value="16" literal="!="/>
-    <eLiterals name="LESS_EQUALS" value="17" literal="&lt;="/>
-    <eLiterals name="LESS" value="18" literal="&lt;"/>
+    <eLiterals name="CONTINUED" value="1" literal=".."/>
+    <eLiterals name="ASSING" value="2" literal="="/>
+    <eLiterals name="IMPLIES" value="3" literal="->"/>
+    <eLiterals name="LEFT_IMPLIES" value="4" literal="&lt;-"/>
+    <eLiterals name="MAPPEDTO" value="5" literal=":->"/>
+    <eLiterals name="LEFT_MAPPEDTO" value="6" literal="&lt;-:"/>
+    <eLiterals name="PLUS" value="7" literal="+"/>
+    <eLiterals name="MINUS" value="8" literal="-"/>
+    <eLiterals name="TIMES" value="9" literal="*"/>
+    <eLiterals name="DIVIDED" value="10" literal="/"/>
+    <eLiterals name="AND" value="11" literal="&amp;&amp;"/>
+    <eLiterals name="OR" value="12" literal="||"/>
+    <eLiterals name="SETMINUS" value="13" literal="\"/>
+    <eLiterals name="INTO" value="14" literal=">>"/>
+    <eLiterals name="LEFT_INTO" value="15" literal="&lt;&lt;"/>
+    <eLiterals name="GREATER" value="16" literal=">"/>
+    <eLiterals name="GREATER_EQUALS" value="17" literal=">="/>
+    <eLiterals name="EQUALS" value="18" literal="=="/>
+    <eLiterals name="NOT_EQUALS" value="19" literal="!="/>
+    <eLiterals name="LESS_EQUALS" value="20" literal="&lt;="/>
+    <eLiterals name="LESS" value="21" literal="&lt;"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//Facts">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" eType="ecore:EClass platform:/resource/org.eclipse.xtext.xbase/model/Xtype.ecore#//XImportSection"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Par" eSuperTypes="#//Exp">
     <eStructuralFeatures xsi:type="ecore:EReference" name="on" eType="#//Exp" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
-        eType="#//Exp" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Facts" eSuperTypes="#//Exp">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="facts" upperBound="-1"
-        eType="#//Fact" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Seq" eSuperTypes="#//Exp">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
         eType="#//Exp" containment="true"/>
   </eClassifiers>

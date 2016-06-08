@@ -7,8 +7,8 @@ generate megamodel "http://www.softlang.org/megal/Megamodel"
 /**
  * A model is basically a list of facts
  */
-Model:
-	items+=Fact*;
+Model returns Facts:
+	{Model} imports=XImportSection? items+=Fact*;
 
 	/**
 	 * A statement connects three parameterized instances
@@ -30,8 +30,7 @@ Exp returns Exp:
 	 * - Symbols and names
 	 */
 Term returns Exp:
-	{Facts} '{' facts+=Fact* '}'
-	| {Seq} '[' (items+=Exp (',' items+=Exp)*)? ']'
+	{Facts} '{' items+=Fact* '}'
 	| {Type} 'jvm' '(' type=JvmTypeReference ')'
 	| {Name} name=QualifiedName
 	| {Text} value=STRING
@@ -43,6 +42,7 @@ Term returns Exp:
 	 */
 enum Symbol:
 	COLON=':'
+	| CONTINUED='..'
 	| ASSING='='
 	| IMPLIES='->'
 	| LEFT_IMPLIES='<-'
@@ -55,6 +55,8 @@ enum Symbol:
 	| AND='&&'
 	| OR='||'
 	| SETMINUS='\\'
+	| INTO='>>'
+	| LEFT_INTO='<<'
 	| GREATER='>'
 	| GREATER_EQUALS='>='
 	| EQUALS='=='
